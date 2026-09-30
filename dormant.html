@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6f18bd">
+<title>KB Bank Finance — Informasi Rekening Dormant</title>
+<style>
+:root{--purple:#7217bf;--purple2:#9b2fe2;--purple3:#5f0da8;--ink:#17131b;--muted:#746d79;--line:#eee8f1;--bg:#f7f6f8;--surface:#fff;--gold:#f2bf48;--danger:#d53d4f;--shadow:0 14px 34px rgba(55,25,82,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 0%,rgba(154,47,226,.10),transparent 28%),#f5f3f7}button,a{font:inherit}a{text-decoration:none;color:inherit}.app{width:min(1180px,100%);min-height:100vh;margin:0 auto;background:var(--surface);box-shadow:0 0 70px rgba(42,12,72,.10);padding-bottom:92px}.top{min-height:205px;padding:22px clamp(18px,4vw,42px) 76px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;color:#fff;background:radial-gradient(circle at 88% 5%,rgba(255,255,255,.10),transparent 28%),radial-gradient(circle at 20% 120%,rgba(184,66,244,.24),transparent 45%),linear-gradient(135deg,#5f149f,#7e1dc7 55%,#9427da);position:relative;overflow:hidden}.top:after{content:"";position:absolute;width:280px;height:280px;right:-70px;bottom:-175px;border:38px solid rgba(255,255,255,.045);border-radius:50%}.brand-mini,.top-actions{position:relative;z-index:2}.brand-star{display:inline-flex;align-items:flex-end;font-size:31px;font-weight:950;letter-spacing:-.04em}.brand-star .kb{color:#f2bb37}.brand-star .star{color:#fff}.brand-star sup{color:#ffd95e;font-size:12px;top:-1.1em;position:relative}.brand-sub{display:block;margin-top:-4px;color:rgba(255,255,255,.76);font-size:9px;font-weight:800;letter-spacing:.06em}.crumb{margin:25px 0 5px;color:rgba(255,255,255,.72);font-size:11px}.top h1{margin:0;max-width:650px;font-size:clamp(26px,4vw,40px);line-height:1.05;letter-spacing:-.035em}.top p{margin:9px 0 0;color:rgba(255,255,255,.78);font-size:12px}.back{position:relative;z-index:2;min-height:44px;padding:0 15px;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);border-radius:14px;background:rgba(255,255,255,.09);color:#fff;font-weight:850;font-size:12px}.content{position:relative;z-index:3;margin:-48px clamp(14px,3vw,28px) 0}.hero-card{padding:22px;border-radius:28px;background:#fff;border:1px solid rgba(124,32,198,.11);box-shadow:0 18px 42px rgba(71,25,99,.16)}.demo-strip{display:flex;gap:10px;align-items:center;margin-bottom:18px;padding:11px 13px;border:1px solid #e9dff0;border-radius:14px;color:#6d6074;background:#faf7fc;font-size:10.5px;line-height:1.45}.demo-strip strong{color:#5f149f}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tile{min-width:0;padding:15px;border-radius:18px;border:1px solid #eee7f2;background:linear-gradient(145deg,#fff,#fbf8fd)}.tile span{display:block;color:#7d7481;font-size:10px;font-weight:750}.tile strong{display:block;margin-top:7px;color:#321c42;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.main-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:14px;margin-top:14px}.status-card,.deposit-card,.info-card,.detail-card{border:1px solid #eee7f2;border-radius:22px;background:#fff}.status-card{padding:22px;background:radial-gradient(circle at 90% 0%,rgba(213,61,79,.10),transparent 30%),linear-gradient(145deg,#fff,#fff9fa)}.status-icon{width:56px;height:56px;display:grid;place-items:center;border-radius:18px;color:#fff;background:linear-gradient(145deg,#e04a5b,#bf2639);box-shadow:0 11px 24px rgba(208,48,67,.22);font-size:25px;font-weight:950}.status-card small{display:block;margin-top:16px;color:#856b72;font-size:10px;font-weight:800;letter-spacing:.12em}.status-card h2{margin:5px 0 8px;color:#c52e40;font-size:31px}.status-card p{margin:0;color:#776c72;font-size:12px;line-height:1.65}.right-stack{display:grid;gap:14px}.deposit-card{padding:22px;background:radial-gradient(circle at 100% 0%,rgba(242,191,72,.20),transparent 38%),linear-gradient(145deg,#fffdf7,#fff8e6);border-color:#f0dfb0}.deposit-label{color:#8f6a13;font-size:11px;font-weight:850}.deposit-card strong{display:block;margin:9px 0 10px;color:#9a6a08;font-size:clamp(28px,4vw,42px);letter-spacing:-.04em}.deposit-card p{margin:0;color:#806c3f;font-size:11px;line-height:1.6}.info-card{padding:18px;display:flex;gap:13px;align-items:flex-start;background:linear-gradient(145deg,#fbf8ff,#f5edfb)}.info-icon{flex:0 0 42px;height:42px;display:grid;place-items:center;border-radius:14px;color:#fff;background:linear-gradient(145deg,#8f27d3,#6810ae);font-weight:900}.info-card p{margin:2px 0 0;color:#5b4f62;font-size:12px;line-height:1.65}.detail-card{margin-top:14px;padding:20px}.detail-card h3{margin:0 0 13px;font-size:15px}.row{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid #f0ebf2}.row:first-of-type{border-top:0}.row span{color:#7d7481;font-size:11px}.row strong{text-align:right;color:#321c42;font-size:12px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.btn{min-height:50px;border-radius:16px;border:1px solid #ded1e8;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;cursor:pointer}.btn.primary{border:0;color:#fff;background:linear-gradient(135deg,#8f27d3,#6810ae);box-shadow:0 11px 25px rgba(105,16,174,.24)}.btn.secondary{background:#fff;color:#5f149f}.bottom-nav{position:fixed;z-index:20;left:50%;bottom:0;transform:translateX(-50%);width:min(1180px,100%);height:72px;padding:9px 18px calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);align-items:center;border-top:1px solid #eee8f1;background:rgba(255,255,255,.95);backdrop-filter:blur(16px)}.nav-item{display:grid;place-items:center;gap:3px;color:#b5adb8;font-size:9px}.nav-item.active{color:#7919bf;font-weight:900}.nav-ico{font-size:20px}.bottom-nav .scan{width:58px;height:58px;margin:-29px auto 0;border-radius:19px;color:#fff;background:linear-gradient(145deg,#8f27d3,#6810ae);box-shadow:0 11px 25px rgba(105,16,174,.30);font-size:24px}.bottom-nav a{cursor:pointer}.bottom-nav div[aria-disabled="true"]{pointer-events:none}.empty{color:#9b929f}.pulse{display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#d63b50;box-shadow:0 0 0 0 rgba(214,59,80,.35);animation:pulse 1.8s infinite}@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(214,59,80,0)}100%{box-shadow:0 0 0 0 rgba(214,59,80,0)}}
+@media(max-width:760px){.summary{grid-template-columns:1fr 1fr}.main-grid{grid-template-columns:1fr}.top{min-height:225px}.content{margin-top:-52px}.actions{grid-template-columns:1fr}.tile strong{font-size:13px}}
+@media(max-width:430px){.summary{grid-template-columns:1fr}.hero-card{padding:16px;border-radius:24px}.top{padding-inline:18px}.top h1{font-size:28px}.back{padding:0 12px}.row{align-items:flex-start;flex-direction:column;gap:6px}.row strong{text-align:left}.status-card,.deposit-card,.detail-card{padding:17px}}
+@media(prefers-reduced-motion:reduce){.pulse{animation:none}}
+
+/* Premium Gift Experience */
+.gift-premium{position:relative;margin-top:16px;border-radius:26px;padding:1px;overflow:hidden;background:linear-gradient(120deg,rgba(255,215,112,.9),rgba(155,47,226,.78),rgba(255,255,255,.8));box-shadow:0 22px 54px rgba(89,24,139,.18)}
+.gift-premium:before{content:"";position:absolute;inset:-45%;background:conic-gradient(from 0deg,transparent 0 34%,rgba(255,255,255,.85) 42%,transparent 50% 100%);animation:giftSpin 8s linear infinite;pointer-events:none}
+.gift-shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);gap:18px;align-items:center;padding:24px;border-radius:25px;background:radial-gradient(circle at 80% 10%,rgba(255,255,255,.13),transparent 26%),linear-gradient(135deg,#35105f,#6810ae 52%,#8e2bd0);color:#fff;overflow:hidden}
+.gift-shell:after{content:"";position:absolute;width:320px;height:320px;right:-120px;bottom:-210px;border-radius:50%;border:48px solid rgba(255,255,255,.045)}
+.gift-copy{position:relative;z-index:2}.gift-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:#ffe8a6}.gift-kicker i{width:7px;height:7px;border-radius:50%;background:#ffd65a;box-shadow:0 0 16px #ffd65a;animation:giftPulse 1.8s ease-in-out infinite}.gift-copy h3{margin:13px 0 7px;font-size:clamp(23px,3vw,34px);line-height:1.02;letter-spacing:-.04em}.gift-copy p{margin:0;max-width:560px;color:rgba(255,255,255,.72);font-size:11.5px;line-height:1.65}.gift-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.gift-cta{min-height:44px;padding:0 15px;border-radius:14px;border:1px solid rgba(255,255,255,.18);display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:900;font-size:11px;color:#2b1740;background:linear-gradient(135deg,#fff4c5,#f7c953);box-shadow:0 10px 24px rgba(0,0,0,.18);transition:.25s ease;cursor:pointer}.gift-cta:hover{transform:translateY(-3px) scale(1.015);box-shadow:0 15px 32px rgba(0,0,0,.23)}.gift-ghost{min-height:44px;padding:0 15px;border-radius:14px;border:1px solid rgba(255,255,255,.18);display:inline-flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.07);font-weight:850;font-size:11px}
+.gift-stage{position:relative;z-index:2;min-height:180px;display:grid;place-items:center;perspective:900px}.gift-orbit{position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.12);border-radius:50%;animation:giftOrbit 11s linear infinite}.gift-orbit:before,.gift-orbit:after{content:"✦";position:absolute;color:#ffd65a;text-shadow:0 0 18px rgba(255,214,90,.8);font-size:15px}.gift-orbit:before{top:13px;left:27px}.gift-orbit:after{right:12px;bottom:35px}.gift-box{position:relative;width:118px;height:96px;transform-style:preserve-3d;animation:giftFloat 4.8s ease-in-out infinite}.gift-box-base{position:absolute;left:9px;right:9px;bottom:0;height:72px;border-radius:18px;background:linear-gradient(145deg,#8b46e7,#5d18a4);box-shadow:0 24px 34px rgba(18,4,38,.35),inset 0 1px 0 rgba(255,255,255,.2);transform:rotateX(4deg) rotateY(-8deg)}.gift-box-base:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:18px;transform:translateX(-50%);background:linear-gradient(180deg,#ffe6a0,#f2bd3d)}.gift-lid{position:absolute;left:0;right:0;top:14px;height:28px;border-radius:12px;background:linear-gradient(145deg,#a460f2,#6c20b5);box-shadow:0 10px 20px rgba(15,3,31,.24);transform:rotate(-3deg)}.gift-lid:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:18px;transform:translateX(-50%);background:linear-gradient(180deg,#ffe9a8,#f2bd3d)}.gift-bow{position:absolute;left:50%;top:-2px;width:55px;height:30px;transform:translateX(-50%)}.gift-bow:before,.gift-bow:after{content:"";position:absolute;top:4px;width:27px;height:20px;border:8px solid #f6ca57;border-radius:50% 50% 45% 50%}.gift-bow:before{right:25px;transform:rotate(26deg)}.gift-bow:after{left:25px;transform:rotate(-26deg)}.gift-spark{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff2b3;box-shadow:0 0 16px #ffe680;animation:giftSpark 2.8s ease-in-out infinite}.gift-spark.s1{left:18%;top:18%;animation-delay:.2s}.gift-spark.s2{right:18%;top:32%;animation-delay:1s}.gift-spark.s3{left:31%;bottom:18%;animation-delay:1.7s}.gift-spark.s4{right:30%;bottom:8%;animation-delay:2.1s}.gift-note{position:absolute;right:10px;bottom:4px;color:rgba(255,255,255,.54);font-size:8px;letter-spacing:.08em;text-transform:uppercase}.gift-toast{position:fixed;left:50%;bottom:92px;z-index:50;transform:translate(-50%,18px);opacity:0;pointer-events:none;padding:11px 14px;border-radius:14px;color:#fff;background:rgba(41,18,61,.94);box-shadow:0 16px 38px rgba(27,8,45,.25);backdrop-filter:blur(16px);font-size:11px;font-weight:800;transition:.28s ease}.gift-toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes giftSpin{to{transform:rotate(360deg)}}@keyframes giftPulse{50%{transform:scale(1.55);opacity:.55}}@keyframes giftOrbit{to{transform:rotate(360deg)}}@keyframes giftFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}@keyframes giftSpark{0%,100%{opacity:.2;transform:scale(.6)}45%{opacity:1;transform:scale(1.35)}}
+@media(max-width:760px){.gift-shell{grid-template-columns:1fr;padding:20px}.gift-stage{min-height:155px}.gift-note{display:none}}
+@media(max-width:430px){.gift-shell{padding:17px}.gift-actions{display:grid}.gift-cta,.gift-ghost{width:100%}}
+@media(prefers-reduced-motion:reduce){.gift-premium:before,.gift-orbit,.gift-box,.gift-kicker i,.gift-spark{animation:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand-mini">
+      <div class="brand-star"><span class="kb">KB</span><span class="star">star</span><sup>★</sup></div>
+      <span class="brand-sub">KB BANK FINANCE · MODE DEMO</span>
+      <div class="crumb">Dashboard &nbsp;›&nbsp; Rekening &nbsp;›&nbsp; Dormant</div>
+      <h1>Informasi Rekening Dormant</h1>
+      <p>Ringkasan status rekening dan saldo yang tersinkron dengan dashboard.</p>
+    </div>
+    <a class="back" href="dashboard-pinjaman.html" aria-label="Kembali ke Dashboard">← Dashboard</a>
+  </header>
+
+  <main class="content">
+    <section class="hero-card">
+      <div class="demo-strip"><span>ⓘ</span><div><strong>Mode demo.</strong> Halaman ini hanya menampilkan data simulasi dari dashboard dan tidak melakukan setoran, pembayaran, atau transaksi bank nyata.</div></div>
+      <div class="summary">
+        <article class="tile"><span>Nama Rekening</span><strong id="summaryName">-</strong></article>
+        <article class="tile"><span>Nomor Rekening</span><strong id="summaryAccount">-</strong></article>
+        <article class="tile"><span>Saldo Rekening KB Bank</span><strong id="summaryMainBalance">Rp0</strong></article>
+        <article class="tile"><span>Saldo Pinjaman</span><strong id="summaryLoanBalance">Rp0</strong></article>
+      </div>
+
+      <div class="main-grid">
+        <article class="status-card">
+          <div class="status-icon">!</div>
+          <small><span class="pulse"></span>STATUS REKENING</small>
+          <h2>DORMANT</h2>
+          <p>Status ini ditampilkan sebagai bagian dari simulasi alur dashboard. Data rekening tetap dibaca dari state pengguna yang sama dengan halaman Dashboard.</p>
+        </article>
+        <div class="right-stack">
+          <article class="deposit-card">
+            <div class="deposit-label">Nominal Saldo Perdana · Simulasi</div>
+            <strong>Rp2.000.000</strong>
+            <p>Nominal ini hanya elemen simulasi pada prototipe. Verifikasi persyaratan produk dan prosedur sebenarnya harus dilakukan melalui kanal resmi bank.</p>
+          </article>
+          <article class="info-card">
+            <div class="info-icon">i</div>
+            <p>Proses pencairan saldo pinjaman akan dilanjutkan setelah seluruh persyaratan yang berlaku telah dipenuhi dan diverifikasi.</p>
+          </article>
+        </div>
+      </div>
+
+
+      <section class="gift-premium" aria-labelledby="giftPremiumTitle">
+        <div class="gift-shell">
+          <div class="gift-copy">
+            <div class="gift-kicker"><i></i> Premium Experience</div>
+            <h3 id="giftPremiumTitle">Benefit &amp; Gift Center</h3>
+            <p>Area interaktif untuk menampilkan benefit, promo, atau hadiah pada mode demo. Animasi dibuat native dengan CSS agar tetap tajam, ringan, dan terasa menyatu dengan dashboard.</p>
+            <div class="gift-actions">
+              <button class="gift-cta" id="giftExplore" type="button">🎁 Lihat Benefit <span>→</span></button>
+              <span class="gift-ghost">Animasi aktif · Web native</span>
+            </div>
+          </div>
+          <div class="gift-stage" aria-hidden="true">
+            <div class="gift-orbit"></div>
+            <span class="gift-spark s1"></span><span class="gift-spark s2"></span><span class="gift-spark s3"></span><span class="gift-spark s4"></span>
+            <div class="gift-box">
+              <div class="gift-bow"></div>
+              <div class="gift-lid"></div>
+              <div class="gift-box-base"></div>
+            </div>
+            <div class="gift-note">Demo visual · bukan transaksi</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-card" aria-labelledby="detailTitle">
+        <h3 id="detailTitle">Detail Informasi Rekening</h3>
+        <div class="row"><span>Nama Rekening</span><strong id="detailName">-</strong></div>
+        <div class="row"><span>Nomor Rekening</span><strong id="detailAccount">-</strong></div>
+        <div class="row"><span>Saldo Rekening KB Bank</span><strong id="detailMainBalance">Rp0</strong></div>
+        <div class="row"><span>Saldo Pinjaman</span><strong id="detailLoanBalance">Rp0</strong></div>
+      </section>
+
+      <div class="actions">
+        <a class="btn primary" href="dashboard-pinjaman.html">Kembali ke Dashboard</a>
+        <button class="btn secondary" id="refreshButton" type="button">Sinkronkan Data</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigasi bawah">
+    <a class="nav-item" href="dashboard-pinjaman.html"><span class="nav-ico">⌂</span><span>Home</span></a>
+    <div class="nav-item active" aria-disabled="true"><span class="nav-ico">◷</span><span>Dormant</span></div>
+    <div class="scan" aria-hidden="true">⌗</div>
+    <div class="nav-item" aria-disabled="true"><span class="nav-ico">▣</span><span>Produk</span></div>
+    <div class="nav-item" aria-disabled="true"><span class="nav-ico">▦</span><span>Menu</span></div>
+  </nav>
+</div>
+<script src="realtime-config.js"></script>
+<script src="flow-state.js"></script>
+<script>
+(()=>{
+  "use strict";
+  const $=id=>document.getElementById(id);
+  const money=value=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(value||0));
+  const readState=()=>{
+    const identity=window.KBFlow?.get("identity",{})||{};
+    const applicant=window.KBFlow?.get("applicant",{})||{};
+    const financial=window.KBFlow?.get("financial",{})||{};
+    const loan=window.KBFlow?.get("loanDetail",{})||{};
+    const balance=window.KBFlow?.get("dashboardBalance",null)||{};
+    const total=Number(loan.loanAmount||0);
+    const loanBalance=Number.isFinite(Number(balance.loanBalance))?Number(balance.loanBalance):total;
+    const mainBalance=Number.isFinite(Number(balance.mainBalance))?Number(balance.mainBalance):0;
+    return {
+      name:applicant.fullName||identity.fullName||"Nasabah",
+      account:financial.accountNumber||"-",
+      loanBalance:Math.max(0,loanBalance),
+      mainBalance:Math.max(0,mainBalance)
+    };
+  };
+  const render=()=>{
+    const s=readState();
+    $("summaryName").textContent=s.name;
+    $("summaryAccount").textContent=s.account;
+    $("summaryMainBalance").textContent=money(s.mainBalance);
+    $("summaryLoanBalance").textContent=money(s.loanBalance);
+    $("detailName").textContent=s.name;
+    $("detailAccount").textContent=s.account;
+    $("detailMainBalance").textContent=money(s.mainBalance);
+    $("detailLoanBalance").textContent=money(s.loanBalance);
+  };
+  render();
+  $("refreshButton")?.addEventListener("click",render);
+  window.addEventListener("pageshow",render);
+
+  const giftBtn=$("giftExplore");
+  if(giftBtn){
+    const toast=document.createElement("div");
+    toast.className="gift-toast";
+    toast.textContent="Benefit Center aktif pada mode demo ✦";
+    document.body.appendChild(toast);
+    giftBtn.addEventListener("click",()=>{
+      toast.classList.add("show");
+      window.setTimeout(()=>toast.classList.remove("show"),2200);
+    });
+  }
+})();
+</script>
+</body>
+</html>

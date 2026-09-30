@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6f1bb4">
+<title>KBstar Dashboard · Simulasi</title>
+<style>
+:root{--p1:#5b1595;--p2:#7c25bc;--p3:#a541d6;--gold:#ffe34f;--ink:#25182d;--muted:#82768a;--bg:#f6f4f8;--card:#fff;--line:#ebe4ef;--shadow:0 18px 48px rgba(62,27,83,.14)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#d9d5df;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}button,a{font:inherit}.app{width:min(100%,430px);min-height:100svh;margin:auto;background:var(--bg);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.hero{position:relative;min-height:208px;padding:18px 22px 72px;color:#fff;background:radial-gradient(circle at 88% -8%,rgba(255,255,255,.14),transparent 32%),linear-gradient(145deg,#6d18bc 0%,#8429d2 50%,#a23ae4 100%);overflow:hidden;isolation:isolate;animation:heroGradientShift 10s ease-in-out infinite alternate}.hero:before{content:"";position:absolute;inset:-22% -45%;z-index:0;background:linear-gradient(112deg,transparent 28%,rgba(255,226,92,.05) 40%,rgba(255,255,255,.22) 49%,rgba(255,223,83,.10) 56%,transparent 69%);transform:translateX(-46%) rotate(-4deg);animation:heroGoldSweep 6.5s cubic-bezier(.45,0,.25,1) infinite;pointer-events:none}.hero:after{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:-145px;top:-185px;z-index:0;background:radial-gradient(circle,rgba(255,255,255,.12) 0 16%,rgba(255,255,255,.055) 32%,transparent 67%);filter:blur(.2px);animation:heroOrbFloat 7.5s ease-in-out infinite;pointer-events:none}.hero-orb{position:absolute;border-radius:999px;pointer-events:none;z-index:0;mix-blend-mode:screen}.hero-orb.one{width:155px;height:155px;left:-72px;top:96px;background:radial-gradient(circle at 58% 42%,rgba(255,225,87,.18),rgba(255,255,255,.04) 42%,transparent 70%);filter:blur(1px);animation:heroOrbOne 8s ease-in-out infinite}.hero-orb.two{width:88px;height:88px;right:66px;top:110px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 67%);filter:blur(2px);animation:heroOrbTwo 6.2s ease-in-out infinite}.hero-grid{position:absolute;inset:0;z-index:0;opacity:.17;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.82),transparent 88%);animation:heroGridDrift 16s linear infinite;pointer-events:none}.hero .status,.hero .topbar{position:relative;z-index:2}.hero .brand b{background-size:180% 100%;animation:brandGoldShimmer 4.8s ease-in-out infinite}.hero .greeting{animation:heroGreetingFloat 5.5s ease-in-out infinite}.hero .bell{animation:heroBellFloat 4.2s ease-in-out infinite}.hero .bell:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;right:4px;top:4px;background:#ffe251;box-shadow:0 0 0 0 rgba(255,226,81,.55);animation:heroBellPulse 2.6s ease-out infinite}.hero .bell{position:relative}
+@keyframes heroGradientShift{0%{background-position:0% 50%}100%{background-position:100% 48%}}
+@keyframes heroGoldSweep{0%,18%{transform:translateX(-58%) rotate(-4deg);opacity:0}28%{opacity:.9}58%{opacity:.72}72%,100%{transform:translateX(62%) rotate(-4deg);opacity:0}}
+@keyframes heroOrbFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-18px,20px,0) scale(1.06)}}
+@keyframes heroOrbOne{0%,100%{transform:translate3d(0,0,0) scale(.96);opacity:.68}50%{transform:translate3d(28px,-16px,0) scale(1.08);opacity:1}}
+@keyframes heroOrbTwo{0%,100%{transform:translate3d(0,0,0) scale(.9);opacity:.35}50%{transform:translate3d(-24px,15px,0) scale(1.18);opacity:.8}}
+@keyframes heroGridDrift{from{background-position:0 0,0 0}to{background-position:34px 34px,34px 34px}}
+@keyframes brandGoldShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes heroGreetingFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes heroBellFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-2px) rotate(2deg)}}
+@keyframes heroBellPulse{0%{box-shadow:0 0 0 0 rgba(255,226,81,.55)}70%,100%{box-shadow:0 0 0 9px rgba(255,226,81,0)}}
+.status{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:800;opacity:.94;position:relative;z-index:2}.topbar{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:18px;margin-top:22px;position:relative;z-index:2}.brand{position:relative;width:max-content;font-size:27px;font-weight:500;letter-spacing:-1.9px;line-height:.9}.brand b{font-weight:900;background:linear-gradient(90deg,#ffbd3c,#ffdc58);-webkit-background-clip:text;background-clip:text;color:transparent}.brand i{font-style:normal;font-weight:400}.brand em{display:block;margin-top:5px;font-size:8px;line-height:1;letter-spacing:.08em;text-align:right;color:rgba(255,255,255,.72)}.greeting{display:flex;align-items:baseline;gap:5px;white-space:nowrap;font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.76)}.greeting strong{font-size:14px;color:#fff;letter-spacing:.08em}.bell{width:36px;height:36px;display:grid;place-items:center;color:#fff}.bell svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.account-wrap{position:relative;margin:-57px 0 0;padding:52px 14px 0;z-index:5;background:#fff;border-radius:34px 34px 0 0}.sim-badge{display:none}.account{min-height:204px;padding:20px 18px 18px;border-radius:23px;color:#fff;background:radial-gradient(circle at 82% 85%,rgba(255,255,255,.08) 0 12%,transparent 12.5%),radial-gradient(circle at 92% 104%,rgba(255,255,255,.07) 0 23%,transparent 23.5%),linear-gradient(130deg,#7722bf 0%,#8d2ed2 55%,#9b39dd 100%);box-shadow:0 15px 34px rgba(111,29,173,.20);position:relative;overflow:hidden}.account:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.035),transparent 42%,rgba(255,255,255,.025));pointer-events:none}.account-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;position:relative;z-index:1}.account-title{font-size:14px;font-weight:500;opacity:.94}.account-no{font-size:15px;font-weight:500;margin-top:2px;letter-spacing:.01em}.history{border:1.5px solid rgba(255,255,255,.72);background:rgba(255,255,255,.035);color:#fff;border-radius:14px;padding:10px 13px;font-size:10px;font-weight:500;white-space:nowrap}.balance-label{display:flex;align-items:center;gap:7px;margin-top:42px;font-size:12px;opacity:.78;position:relative;z-index:1}.eye-toggle{width:23px;height:23px;border:0;padding:0;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}.eye-toggle svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.balance{font-size:38px;font-weight:700;letter-spacing:-.045em;margin-top:6px;position:relative;z-index:1}.balance small{font-size:18px;font-weight:600}.account-foot{display:none}.carousel-dot{height:8px;width:46px;margin:20px auto 0;border-radius:999px;background:linear-gradient(90deg,#ffbc38,#ffc853);box-shadow:0 4px 10px rgba(255,178,36,.24)}
+.quick{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;padding:28px 13px 20px;background:#fff}.quick button,.quick a{min-width:0;border:0;background:transparent;color:inherit;text-decoration:none;padding:0;text-align:center}.qi{aspect-ratio:1/1;width:100%;max-width:68px;margin:0 auto;border-radius:17px;display:grid;place-items:center;background:#fff;border:1px solid #f0edf3;box-shadow:0 7px 18px rgba(48,29,58,.055);color:#27212c}.qi svg{width:31px;height:31px;stroke:currentColor;fill:none;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.qi .accent{stroke:#8c2ccb}.quick span{display:block;min-height:34px;margin-top:9px;font-size:9px;line-height:1.25;color:#3d3542}.quick button:disabled{cursor:default;opacity:.42;pointer-events:none}.quick #transferButton{cursor:pointer}.quick #transferButton span{font-weight:900;color:#6f219f}
+.section{padding:12px 15px 0}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px}.section h2{font-size:16px;margin:0}.section-head a{font-size:9px;color:#7a2cb4;text-decoration:none;font-weight:800}.loan{border-radius:18px;padding:17px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(62,36,72,.05)}.loan-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.loan-name{font-size:12px;color:#70577c}.loan-status{padding:5px 8px;border-radius:999px;background:#eef9f2;color:#1e784a;font-size:8px;font-weight:900}.loan-value{font-size:22px;font-weight:900;color:#641b9a;margin-top:7px}.loan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.loan-grid div{padding:10px;border-radius:12px;background:#faf7fc}.loan-grid span{display:block;font-size:8px;color:#96889e}.loan-grid strong{display:block;margin-top:3px;font-size:10px;color:#52325f}.progress{height:7px;border-radius:99px;background:#eee9f2;margin-top:14px;overflow:hidden}.progress i{display:block;height:100%;width:68%;background:linear-gradient(90deg,#7624b5,#ffdc4a)}
+.cards{display:flex;gap:10px;overflow:auto;scrollbar-width:none;padding-bottom:4px}.cards::-webkit-scrollbar{display:none}.promo{flex:0 0 265px;min-height:118px;border-radius:18px;padding:16px;background:linear-gradient(135deg,#fff7d6,#fff 65%);border:1px solid #efe4b9;position:relative;overflow:hidden}.promo.purple{background:linear-gradient(135deg,#f2e7ff,#fff);border-color:#e5d5f0}.promo small{font-size:8px;font-weight:900;color:#8b6d22}.promo h3{margin:7px 0 5px;font-size:15px;color:#5a2577}.promo p{margin:0;font-size:9px;line-height:1.5;color:#766b7c}.promo b{display:block;margin-top:10px;color:#6b1aa2;font-size:17px}
+.activity{margin-bottom:100px}.activity-list{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.activity-item{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:13px 14px;border-bottom:1px solid #f0ebf3}.activity-item:last-child{border-bottom:0}.activity-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#f7f1fb;color:#7a28b8}.activity-copy strong{display:block;font-size:11px}.activity-copy span{display:block;font-size:8px;color:#94899a;margin-top:3px}.activity-amount{font-size:10px;font-weight:800;color:#5b316d}
+.bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,430px);height:78px;padding:7px 10px max(7px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);align-items:center;background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -10px 30px rgba(65,33,76,.09);z-index:20}.nav{text-align:center;text-decoration:none;color:#aea5b2;font-size:8px}.nav b{display:block;font-size:19px;line-height:1.25}.nav.active{color:#7b20bb;font-weight:900}.scan{width:54px;height:54px;margin:auto;border-radius:17px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#8d26cb,#6514a3);box-shadow:0 12px 24px rgba(100,20,157,.23);transform:translateY(-13px);font-size:22px}
+
+.transfer-loader{position:fixed;inset:0;z-index:80;display:none;place-items:center;padding:24px;background:radial-gradient(circle at 85% 12%,rgba(255,255,255,.14),transparent 28%),linear-gradient(145deg,#5e159c 0%,#8429d2 52%,#a23ae4 100%);color:#fff;overflow:hidden}.transfer-loader.active{display:grid}.transfer-loader:before{content:"";position:absolute;inset:-20% -45%;background:linear-gradient(112deg,transparent 28%,rgba(255,226,92,.05) 40%,rgba(255,255,255,.26) 49%,rgba(255,223,83,.11) 56%,transparent 69%);animation:transferSweep 2.4s cubic-bezier(.45,0,.25,1) infinite}.transfer-loader:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-150px;top:-170px;background:radial-gradient(circle,rgba(255,255,255,.14),rgba(255,255,255,.05) 34%,transparent 68%);animation:transferOrb 5s ease-in-out infinite}.transfer-loader-card{position:relative;z-index:2;width:min(100%,350px);padding:31px 24px 25px;border:1px solid rgba(255,255,255,.22);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.08));box-shadow:0 26px 70px rgba(42,5,68,.34);backdrop-filter:blur(18px);text-align:center}.transfer-loader-logo{width:82px;height:82px;margin:0 auto 19px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff7b0 0 10%,#ffd950 32%,#eeb52a 72%,#c88c16 100%);box-shadow:0 0 0 8px rgba(255,221,86,.10),0 0 0 18px rgba(255,221,86,.05),0 16px 36px rgba(53,10,82,.24);animation:transferLogoPulse 1.8s ease-in-out infinite}.transfer-loader-logo svg{width:40px;height:40px;stroke:#65159b;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}.transfer-loader-kicker{font-size:9px;font-weight:900;letter-spacing:.18em;color:#ffe670}.transfer-loader-title{margin:8px 0 5px;font-size:22px;font-weight:850;letter-spacing:-.02em}.transfer-loader-copy{margin:0 auto;color:rgba(255,255,255,.78);font-size:11px;line-height:1.55;max-width:260px}.transfer-loader-progress{height:8px;margin-top:23px;border-radius:999px;background:rgba(255,255,255,.13);overflow:hidden}.transfer-loader-progress i{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ffd349,#fff1a0,#ffd349);box-shadow:0 0 16px rgba(255,220,75,.45)}.transfer-loader-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:9px;color:rgba(255,255,255,.7)}.transfer-loader-count{font-size:12px;font-weight:900;color:#fff}.transfer-toast{position:fixed;left:50%;top:24px;z-index:90;width:min(calc(100% - 28px),402px);transform:translate(-50%,-130%);opacity:0;padding:14px 15px;border-radius:18px;background:#fff;color:#2b1833;box-shadow:0 18px 52px rgba(45,17,57,.24);border:1px solid #eee4f3;display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;transition:transform .35s ease,opacity .35s ease}.transfer-toast.show{transform:translate(-50%,0);opacity:1}.transfer-toast-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#f9e783,#ffd446);color:#641a98;font-size:21px;font-weight:900}.transfer-toast strong{display:block;font-size:12px}.transfer-toast span{display:block;margin-top:3px;font-size:9px;line-height:1.4;color:#7d7084}@keyframes transferSweep{0%,10%{transform:translateX(-58%) rotate(-4deg);opacity:0}30%{opacity:.9}70%{opacity:.66}90%,100%{transform:translateX(62%) rotate(-4deg);opacity:0}}@keyframes transferOrb{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-20px,22px,0) scale(1.07)}}@keyframes transferLogoPulse{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.055);filter:brightness(1.08)}}@media(prefers-reduced-motion:reduce){.transfer-loader:before,.transfer-loader:after,.transfer-loader-logo{animation:none!important}.transfer-toast{transition:none}}
+
+@media (prefers-reduced-motion:reduce){.hero,.hero:before,.hero:after,.hero-orb,.hero-grid,.hero .brand b,.hero .greeting,.hero .bell,.hero .bell:after{animation:none!important}}
+@media(min-width:700px){body{padding:24px 0}.app{border-radius:28px;min-height:820px}.bottom{bottom:24px;border-radius:24px;width:430px}}
+</style>
+<style>html.transfer-leaving .app{opacity:0;transform:translateY(5px);transition:opacity .24s ease,transform .24s ease}@media(prefers-reduced-motion:reduce){html.transfer-leaving .app{transition:none;transform:none}}</style>
+
+</head>
+<body>
+<div class="app" id="dashboardApp">
+  <header class="hero">
+    <span class="hero-grid" aria-hidden="true"></span>
+    <span class="hero-orb one" aria-hidden="true"></span>
+    <span class="hero-orb two" aria-hidden="true"></span>
+    <div class="status"><span>07.10</span><span>4G ▮▮ 100%</span></div>
+    <div class="topbar">
+      <div class="brand"><b>KB</b><i>star</i><em>by KB Bank</em></div>
+      <div class="greeting">HALO, <strong id="headerName">NASABAH</strong></div>
+      <div class="bell" aria-label="Notifikasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg></div>
+    </div>
+  </header>
+  <main>
+    <section class="account-wrap">
+      <span class="sim-badge">SIMULASI UI</span>
+      <article class="account">
+        <div class="account-head"><div><div class="account-title">Siaga Digital</div><div class="account-no" id="accountNumber">•••• •••• ••••</div></div><button class="history" type="button">Riwayat Transaksi</button></div>
+        <div class="balance-label"><button class="eye-toggle" type="button" id="balanceToggle" aria-label="Tampilkan atau sembunyikan saldo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-5 10-5 10 5 10 5-3.5 5-10 5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg></button><span>SALDO</span></div>
+        <div class="balance" id="mainBalance">Rp 0<small>,00</small></div>
+        <div class="account-foot"><span>Rekening utama</span><span>KBstar</span></div>
+      </article>
+      <div class="carousel-dot" aria-hidden="true"></div>
+    </section>
+
+    <section class="quick" aria-label="Menu cepat">
+      <button type="button" id="transferButton" aria-label="Buka halaman transfer"><div class="qi"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24 41 8 29 41l-7-12-15-5Z"/><path class="accent" d="m22 29 19-21"/></svg></div><span>Transfer</span></button>
+      <button type="button" disabled aria-disabled="true"><div class="qi"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="8" width="22" height="32" rx="3"/><path class="accent" d="M18 16h12M18 22h12M18 28h8"/><path d="M18 35h12"/></svg></div><span>Bayar Cicilan</span></button>
+      <button type="button" disabled aria-disabled="true"><div class="qi"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="16" y="7" width="20" height="34" rx="5"/><path d="M22 11h8M22 37h8"/><path class="accent" d="M11 17c-3 4-3 10 0 14M7 14c-5 6-5 14 0 20"/></svg></div><span>Cardless</span></button>
+      <button type="button" disabled aria-disabled="true"><div class="qi"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="10" width="30" height="28" rx="4"/><path d="M9 19h30M16 25v6M32 25v6"/><circle class="accent" cx="24" cy="29" r="5"/></svg></div><span>Deposito<br>Berjangka</span></button>
+      <button type="button" disabled aria-disabled="true"><div class="qi"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="accent" d="M19 8h18v29H19z"/><path d="M12 12h19v28H12z"/><path d="M18 30h8M18 34h8"/><text x="17" y="24" font-size="8" fill="currentColor" stroke="none">DC</text></svg></div><span>Kartu Debit</span></button>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>Pinjaman Anda</h2><a href="#">Detail</a></div>
+      <article class="loan">
+        <div class="loan-top"><div class="loan-name">Fasilitas Pinjaman</div><span class="loan-status">DISETUJUI</span></div>
+        <div class="loan-value" id="loanBalance">Rp 0</div>
+        <div class="loan-grid"><div><span>Status</span><strong>Aktif</strong></div><div><span>Tenor</span><strong id="loanTenor">—</strong></div><div><span>Produk</span><strong id="loanProduct">Pinjaman</strong></div></div>
+        <div class="progress"><i></i></div>
+      </article>
+    </section>
+
+    <section class="section"><div class="section-head"><h2>Untuk Anda</h2></div><div class="cards"><article class="promo"><small>KBstar</small><h3>Kelola Keuangan Lebih Mudah</h3><p>Ringkasan akun dan informasi layanan dalam satu tampilan.</p><b>Lebih Praktis</b></article><article class="promo purple"><small>KB Bank</small><h3>Informasi Produk</h3><p>Lihat pilihan produk dan manfaat yang tersedia pada simulasi ini.</p><b>Jelajahi</b></article></div></section>
+
+    <section class="section activity"><div class="section-head"><h2>Aktivitas Terakhir</h2></div><div class="activity-list"><div class="activity-item"><div class="activity-icon">✓</div><div class="activity-copy"><strong>Pengajuan disetujui</strong><span>Status simulasi · baru saja</span></div><div class="activity-amount">SELESAI</div></div><div class="activity-item"><div class="activity-icon">▣</div><div class="activity-copy"><strong>Rekening pencairan</strong><span>Data rekening telah dicatat untuk sesi ini</span></div><div class="activity-amount">TERCATAT</div></div></div></section>
+  </main>
+
+  <nav class="bottom" aria-label="Navigasi bawah"><a class="nav active" href="#"><b>⌂</b>Home</a><a class="nav" href="#"><b>▱</b>Rekening</a><div class="scan">⌗</div><a class="nav" href="#"><b>◇</b>Produk</a><a class="nav" href="#"><b>☰</b>Menu</a></nav>
+</div>
+
+<div class="transfer-loader" id="transferLoader" role="status" aria-live="polite" aria-hidden="true">
+  <div class="transfer-loader-card">
+    <div class="transfer-loader-logo" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 24 41 8 29 41l-7-12-15-5Z"/><path d="m22 29 19-21"/></svg></div>
+    <div class="transfer-loader-kicker">KBSTAR TRANSFER</div>
+    <div class="transfer-loader-title">Menyiapkan Transfer</div>
+    <p class="transfer-loader-copy">Memuat data rekening, nama pemilik, dan nominal pinjaman.</p>
+    <div class="transfer-loader-progress" aria-hidden="true"><i id="transferProgress"></i></div>
+    <div class="transfer-loader-meta"><span>Sinkronisasi data</span><span class="transfer-loader-count" id="transferCount">5 detik</span></div>
+  </div>
+</div>
+<div class="transfer-toast" id="transferToast" role="status" aria-live="polite">
+  <div class="transfer-toast-icon">✓</div>
+  <div><strong>Data transfer siap</strong><span>Nama, nomor rekening, dan nominal pinjaman telah disinkronkan. Membuka detail transfer.</span></div>
+</div>
+
+<script src="flow-state.js"></script>
+<script>
+(()=>{
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const rupiah=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n||0));
+  const first=v=>String(v||'Nasabah').trim().split(/\s+/)[0]||'Nasabah';
+  let realBalance=0,hidden=false;
+  try{
+    const identity=window.KBFlow?.get('identity',{})||{};
+    const applicant=window.KBFlow?.get('applicant',{})||{};
+    const financial=window.KBFlow?.get('financial',{})||{};
+    const loan=window.KBFlow?.get('loanDetail',{})||{};
+    const balance=window.KBFlow?.get('dashboardBalance',{})||{};
+    const name=applicant.fullName||identity.fullName||sessionStorage.getItem('kbFullName')||'Nasabah';
+    const account=financial.accountNumber||sessionStorage.getItem('kbAccountNumber')||'•••• •••• ••••';
+    realBalance=Number.isFinite(Number(balance.mainBalance))?Number(balance.mainBalance):0;
+    const selectedLoanAmount=Number(loan.loanAmount);
+    const loanAmount=Number.isFinite(selectedLoanAmount)&&selectedLoanAmount>0?selectedLoanAmount:(Number.isFinite(Number(balance.loanBalance))?Number(balance.loanBalance):0);
+    $('headerName').textContent=String(name).trim().toUpperCase();
+    $('accountNumber').textContent=account;
+    $('mainBalance').innerHTML=rupiah(realBalance).replace(/,00$/,'')+'<small>,00</small>';
+    $('loanBalance').textContent=rupiah(loanAmount);
+    $('loanTenor').textContent=loan.tenor?String(loan.tenor)+' bulan':'—';
+    $('loanProduct').textContent=loan.product||loan.productName||'Pinjaman';
+  }catch(e){console.warn('Dashboard simulation state',e)}
+  $('balanceToggle').addEventListener('click',()=>{hidden=!hidden;$('mainBalance').innerHTML=hidden?'Rp ••••••••':rupiah(realBalance).replace(/,00$/,'')+'<small>,00</small>';$('balanceToggle').textContent=hidden?'Tampilkan':'Sembunyikan';});
+  $('transferButton').addEventListener('click',()=>{
+    const button=$('transferButton');
+    if(button.dataset.loading==='1')return;
+    button.dataset.loading='1';
+    document.documentElement.classList.add('transfer-leaving');
+    window.setTimeout(()=>{window.location.href='transfer-pinjaman.html';},260);
+  });
+})();
+</script>
+</body>
+</html>

