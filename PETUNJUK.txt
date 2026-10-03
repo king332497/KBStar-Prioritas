@@ -1,0 +1,158 @@
+KBstar Studio — Admin Panel Prototipe Independen v78
+
+MENJALANKAN DI WINDOWS
+1. Gunakan Node.js 22 atau lebih baru.
+2. Ekstrak seluruh ZIP ke satu folder.
+3. Klik dua kali MULAI-ADMIN.cmd.
+4. Pada penggunaan pertama, buat nama admin dan sandi minimal 12 karakter. Sandi tidak ditampilkan saat diketik, dan disimpan hanya sebagai hash scrypt.
+5. Buka http://127.0.0.1:8787 untuk prototipe pengguna.
+6. Buka http://127.0.0.1:8787/admin untuk panel admin.
+7. Biarkan jendela server terbuka. Ctrl+C menghentikan server.
+
+Tidak ada nama admin, kata sandi, ataupun pengguna aktif bawaan. Akun pada screenshot adalah sesi pengujian yang benar-benar dihubungkan selama QA.
+Membuka index.html langsung tanpa server tetap membuka prototipe, tetapi tidak mengaktifkan layanan admin.
+
+LINTAS PERANGKAT / HP
+Server bawaan hanya mendengarkan localhost. iPhone/Android belum diuji fisik dan layanan belum dipublikasikan.
+Untuk akses lintas perangkat, operator perlu hostname yang bisa dijangkau dan sertifikat HTTPS yang dipercaya perangkat.
+Set HOST (contoh 0.0.0.0), PORT, HTTPS_CERT, dan HTTPS_KEY pada lingkungan server. Server menolak bind non-localhost tanpa konfigurasi HTTPS.
+Jangan membuka server HTTP tanpa TLS ke internet. Penyiapan hosting/domain bukan bagian paket ini.
+
+DATA DAN KONTROL
+- ID sesi acak dibuat oleh server untuk setiap pembukaan dokumen. Refresh membuat sesi baru; sesi lama akan menjadi offline/terputus.
+- Nama adalah isian pengguna, belum diverifikasi. Tidak ada autentikasi akun bank nyata dalam prototipe ini.
+- Tidak ada pelacakan lintas browser/perangkat atau penggabungan sesi berdasarkan nama.
+- Data pemantauan: ID, nama isian, halaman, waktu aktivitas/status, dan daftar tujuan yang diizinkan oleh alur simulasi.
+- Tidak mengirim password pengguna, kode, PIN, NIK, rekening, dokumen, atau data finansial ke panel admin.
+- User diberi pemberitahuan singkat bahwa sesi prototipe dipantau admin pendamping.
+- Navigasi: pembuka pinjaman, login, verifikasi, kode simulasi, data pengajuan, dokumen, informasi pinjaman, rekening, persetujuan.
+- Tujuan hanya tersedia jika pernah dibuka dalam dokumen yang sama dan syarat alur masih terpenuhi. Syarat diperiksa lagi pada perangkat sebelum penerapan.
+- Analisis, Dashboard, Transfer, Akun, Produk, Menu, Notifikasi dipantau; kontrol pindah halaman dari area tersebut belum diaktifkan agar tidak memotong prosesnya.
+- Saat PIN/pemrosesan/transisi terbuka, arahan ditolak atau dinonaktifkan.
+- Dikirim tidak sama dengan Diterapkan. Diterapkan menunggu konfirmasi halaman dari perangkat pengguna.
+- Perintah berlaku 15 detik; tidak dikirim sebagai arahan baru setelah kedaluwarsa.
+- ID permintaan mencegah pengulangan perintah yang sama selama sesi tersimpan.
+- Admin tunggal memiliki akses seluruh sesi prototipe servernya. Multi-organisasi dan role bertingkat belum tersedia.
+
+PENYIMPANAN
+Akun admin: data/admin.json (hash sandi, bukan sandi mentah).
+Audit: data/audit.jsonl; hanya server yang dapat mengaksesnya melalui rute yang tersedia. Simpan direktori ini di media server yang terlindungi.
+Sesi/token admin dan pengguna bersifat sementara di memori; restart server meminta login ulang dan membuat koneksi pengguna baru. Arahan tertunda sebelum restart dicatat kedaluwarsa.
+Panel menampilkan maksimal 100 peristiwa audit terkini; file audit tetap berisi seluruh catatan. Tetapkan retensi/rotasi sesuai kebutuhan sebelum hosting publik.
+Sesi yang tidak memberi kabar 24 jam dihapus dari memori. Tidak ada backup otomatis direktori data dalam paket.
+
+PERUBAHAN NAVIGASI MOBILE YANG SUDAH DIMINTA
+Pada halaman pembuka lebar sampai 600 px, navigasi atas menjadi satu baris geser dengan Pinjaman terlihat saat masuk. Menu asli dan rute asli dipertahankan.
+
+ROLLBACK
+Untuk kembali ke website v69 tanpa admin: gunakan ROLLBACK/index-v69.html sebagai index.html dan hentikan server admin. ZIP asli yang diberikan pengguna tidak diubah secara lokal.
+HISTORY/V70/QA/scoped.diff menunjukkan perubahan tepat pada index; HISTORY/V70/QA/diff-check.json membuktikan pembalikan patch mengembalikan kode v69.
+Bukti PREVIEW/ dan QA/ lama diarsipkan tanpa perubahan isi pada HISTORY/v69-evidence.tar.xz. Bukti terbaru berada di QA/ pada ZIP.
+
+BATAS BUKTI
+Uji server dan browser lokal tidak membuktikan kesiapan hosting produksi, keamanan menyeluruh, performa HP fisik, identitas bank, atau persetujuan pinjaman nyata.
+Halaman ini tetap prototipe independen dan bukan layanan resmi KB Bank. Tidak ada perubahan Telegram.
+
+MINTA BANTUAN — v71
+- Tombol di bawah konten pengguna mengirim permintaan untuk sesi itu saja, beserta halaman asal dan waktu server.
+- Status terkirim muncul setelah server menerima; ketukan berulang tidak membuat permintaan kedua selama masih menunggu.
+- Admin: klik filter Butuh bantuan, pilih Detail, lalu Tandai Ditangani.
+- Status pengguna diperbarui langsung dan dipulihkan setelah koneksi tersambung kembali pada sesi yang sama.
+- Permintaan baru setelah ditangani memiliki jeda minimal 30 detik sejak permintaan sebelumnya.
+- Tombol bantuan bukan chat dan tidak otomatis memindahkan halaman. Tidak ada data isian sensitif yang dikirim.
+- Status bantuan tersimpan dalam memori sesi, bukan tiket permanen. Refresh membuat sesi baru; restart server menghapus sesi. Riwayat tindakan tetap tercatat pada audit.
+- Untuk rollback v71: hentikan server, salin isi ROLLBACK/v70 ke folder utama dengan menimpa file yang sama, lalu jalankan lagi. Jangan hapus direktori data operator.
+- QA/help-browser-results.json dan QA/server-results.txt berisi hasil uji lokal. Screenshot QA memakai sesi pengujian, bukan pengguna aktif bawaan.
+
+INDIKATOR WAKTU TUNGGU — v72
+- Pengguna dan detail bantuan admin menampilkan lama menunggu sejak createdAt server, bukan estimasi kapan admin akan menjawab.
+- Saat ditangani, durasi tetap dihitung dari resolvedAt dikurangi createdAt.
+- Saat koneksi putus, label Status terakhir menandakan status belum dikonfirmasi ulang. Setelah tersambung, waktu/status disinkronkan kembali.
+- Pembaruan visual tiap detik hanya berjalan saat tab terlihat dan bantuan masih menunggu. Perubahan jam lokal tidak mengubah penghitung yang sedang berjalan.
+- Aturan sesi v71 tetap: refresh membuat sesi baru; indikator tidak menyimpan tiket lintas refresh.
+- Rollback v72: hentikan server, salin isi ROLLBACK/v71 ke folder utama, lalu jalankan lagi. Data operator tidak perlu dihapus.
+- Bukti pengujian v72 berada di QA; bukti v71 dipertahankan di HISTORY/V71/QA.
+
+PEMERIKSAAN TAHAP PROTOTIPE — v73
+- Isian Verifikasi Data harus lengkap sebelum lanjut: nama, NIK 16 digit, nama ibu dan checkbox pemeriksaan.
+- Pemeriksaan ulang prasyarat pada navigasi tahap, termasuk formulir, dokumen wajib, pilihan pinjaman, rekening 12 digit dan persetujuan.
+- Pesan koreksi dapat diketuk untuk fokus ke kolom bermasalah.
+- Tautan hash menuju tahap terlindungi tidak memberikan status selesai. Pembukaan baru dimulai dari halaman depan. Tidak ada pengenalan akun lama dari nama atau localStorage.
+- Analisis hanya dimulai setelah konfirmasi PIN simulasi; Dashboard baru terbuka setelah periode analisis selesai.
+- BATAS PENTING: Ini pemeriksaan UI prototipe di browser. Backend akun, penyimpanan pengajuan, login akun pengguna dan otorisasi server belum tersedia. Backend admin tetap tidak menerima password/kode/PIN/NIK/dokumen/data keuangan pengguna.
+- Tidak mengklaim melindungi data bank atau menahan manipulasi melalui developer tools. Integrasi backend akun merupakan pekerjaan terpisah yang belum dilakukan.
+- QA/flow-results.json memuat hasil uji browser lokal. Waktu analisis dipercepat dengan jam virtual untuk pengujian, bukan klaim uji lima menit nyata.
+- Rollback v73: ganti index.html dan PETUNJUK.txt dengan isi ROLLBACK/v72. Pengaturan Vercel dan layanan admin tidak diubah.
+
+NAMA DARI VERIFIKASI DATA KE ADMIN — v76
+- Koreksi ruang lingkup: yang diminta adalah menampilkan nama sesi di admin setelah pengguna mengisi Nama Lengkap pada halaman Verifikasi Data. Ini bukan pencarian akun atau penentu jalur pengajuan berdasarkan nama.
+- Login dan alur pengguna kembali memakai versi v73 sebelum tambahan v74/v75. Tidak ada kolom kode akses prototipe tambahan, pilihan pengajuan baru/lama, tautan terkait akses, atau popup simpan kode.
+- Halaman Verifikasi Data menggunakan markup dan CSS yang sama persis dengan v73. Tidak ada tambahan tampilan pengguna dalam patch ini.
+- Nama di admin hanya mengambil kolom ks-demo-fullname pada Verifikasi Data. Sebelum kolom diisi, sesi tampil sebagai Nama belum diisi. Username/email Login tidak dijadikan nama admin.
+- Input dan change pada kolom tersebut memperbarui sesi yang sama. Jika nama diubah, admin menerima nama terbaru; jika dikosongkan, admin kembali menampilkan Nama belum diisi. Nama dari kolom tahap lain tidak menggantikan kolom sumber ini.
+- Dua browser/konteks terpisah tetap memakai ID sesi berbeda walaupun nama sama. Nama adalah isian pengguna, bukan identitas terverifikasi dan bukan ID akun.
+- Data pendampingan yang dikirim tetap berupa nama, halaman, tujuan navigasi yang diizinkan dan aktivitas. Sandi demo, NIK, nama ibu, Kode Simulasi dan PIN tidak ditambahkan ke payload admin.
+- Admin, bantuan, waktu tunggu, dan mekanisme navigasi admin tetap menggunakan layanan yang sudah ada. File admin UI tidak diubah. Modul access-store.mjs dari paket terdahulu tetap disertakan sebagai file tidak aktif; server v73 yang dipulihkan tidak mengimpornya maupun menyediakan endpoint akses pengajuan.
+- Pemulihan ini tidak menghapus data operator. Jika sebelumnya ada data/applications.json dari percobaan v74/v75, simpan privat; versi ini tidak menggunakannya. Jangan unggah data atau kredensial ke GitHub.
+- Uji aktual memakai dua konteks browser terpisah dan admin lokal. Screenshot berisi sesi uji, bukan data bawaan. Halaman 320, 390, 430, 1280 px diperiksa tanpa scroll horizontal.
+- Dashboard admin membutuhkan server Node.js berjalan dan pengguna membuka website melalui server yang sama. Hosting Vercel statis saja tidak menjalankan pemantauan realtime. Paket ini belum dipasang ke hosting publik.
+- Rollback patch nama ke v73: pulihkan index.html dan public/support-client.js dari ROLLBACK/v73. Untuk kembali sepenuhnya ke paket v75, hentikan server lalu pulihkan lima file pada ROLLBACK/v75 sesuai lokasinya. Jangan hapus direktori data operator.
+- Riwayat bukti dan rollback paket sebelumnya dipertahankan dalam HISTORY/pre-v76.tar.xz.
+
+SOROTAN NAMA PADA ADMIN — v77
+- Hanya public/admin.js dan public/admin.css yang berubah pada runtime. Website pengguna, server, pendampingan, dan Telegram sama persis dengan v76.
+- Saat nama pada sesi yang sudah terpantau berubah, baris sesi tersebut mendapat sorotan ungu muda selama 800 ms lalu kembali ke warna semula. Nama pertama yang diisi dari kondisi kosong juga memicu sorotan.
+- Perbandingan memakai ID sesi. Dua orang bernama sama tetap disorot secara terpisah. Nama dihapus kembali ke kondisi kosong juga dianggap perubahan.
+- Tampilan awal admin tidak menyorot semua nama. Pembaruan rutin, pilihan baris, atau pencarian dengan nama yang sama tidak memicu sorotan ulang.
+- Saat tabel dirender kembali, sisa waktu sorotan dipertahankan. Filter tidak memutar ulang sorotan yang sudah kedaluwarsa. Setiap perubahan nama terbaru hanya memperbarui satu masa sorotan pada barisnya, tanpa efek bertumpuk.
+- Preferensi reduced motion memakai warna diam selama 800 ms, tanpa animasi memudar.
+- Bukti browser memakai dua sesi uji pada backend lokal. Screenshot menangkap salah satu frame sorotan, bukan tampilan permanen. Hosting publik belum diperbarui.
+- Rollback ke v76: pulihkan public/admin.js, public/admin.css, dan PETUNJUK.txt dari ROLLBACK/v76. Tidak ada migrasi atau perubahan data.
+- Arsip QA dan rollback sebelumnya tetap utuh di HISTORY/pre-v77.tar.xz.
+
+FILTER NAMA BARU DIPERBARUI — v78
+- Pilih Nama baru diperbarui pada dropdown filter yang sudah ada di admin. Menampilkan sesi dengan perubahan nama dalam lima menit terakhir, diurutkan dari waktu perubahan terbaru. Pencarian nama/ID tetap bisa digunakan bersamaan.
+- Rentang lima menit ditampilkan di bawah filter. Baris keluar otomatis setelah rentangnya habis; sesi atau data pengguna tidak dihapus. Pilih Semua status untuk menampilkan kembali seluruh sesi.
+- Waktu nameUpdatedAt dicatat oleh server hanya ketika nama yang sudah di-trim berubah. Pengisian awal dari kosong dan pengosongan nama termasuk perubahan. Pembaruan status/aktivitas dengan nama yang sama tidak memperpanjang rentang ini.
+- Sesi awal tanpa nama mempunyai nameUpdatedAt=null dan tidak dianggap baru diperbarui. Nama sama pada dua ID sesi tetap diperlakukan terpisah.
+- Refresh atau membuka ulang halaman admin tetap memakai waktu perubahan dari sesi server. Mulai v79, pilihan dropdown dipulihkan dari browser setelah refresh; waktu perubahan tetap berasal dari server.
+- Metadata waktu mengikuti masa hidup sesi yang sudah ada. Sesi admin/pengguna tetap berbasis memori; restart server tidak mempertahankan sesi. Tidak ada database atau migrasi baru.
+- Timestamp tidak dapat diisi atau ditimpa dari payload pengguna. Akses data sesi tetap memerlukan autentikasi admin.
+- Sorotan nama 800 ms tetap dipertahankan. Filter bantuan, status, pencarian dan detail pengguna tetap tersedia. Website pengguna dan support-client.js tidak berubah.
+- Runtime berubah: public/admin.html, public/admin.js, public/admin.css, dan tiga penyesuaian metadata nama di server.mjs. Telegram tidak diubah.
+- Bukti browser memakai sesi uji lokal; batas lima menit diuji dengan percepatan jam server. Screenshot aktual admin disertakan untuk desktop dan mobile. Hosting publik belum diperbarui.
+- Rollback: hentikan server, pulihkan server.mjs, public/admin.html, public/admin.js, public/admin.css, dan PETUNJUK.txt dari ROLLBACK/v77. Tidak ada data operator yang perlu dihapus. Riwayat QA/rollback sebelumnya ada di HISTORY/pre-v78.tar.xz.
+
+INGAT PILIHAN FILTER ADMIN — v79
+- Pilihan dropdown filter disimpan ketika diubah dan dipulihkan sebelum daftar sesi ditampilkan setelah refresh atau halaman admin dibuka kembali pada browser dan alamat website yang sama. Semua enam pilihan didukung, termasuk Nama baru diperbarui.
+- Tombol ringkas Butuh bantuan juga menyimpan pilihan tersebut. Pilih Semua status untuk kembali melihat semua sesi sekaligus menyimpan pilihan itu.
+- Hanya nilai filter yang tersimpan pada localStorage dengan kunci kbstar.admin.session-filter.v1. Pencarian, nama pengguna, ID sesi, sandi, serta data pengajuan tidak ditambahkan ke penyimpanan ini. Preferensi bersifat per browser/alamat, bukan sinkronisasi akun atau perangkat.
+- Nilai tersimpan yang tidak dikenali diabaikan dan memakai Semua status. Jika browser memblokir penyimpanan, filter tetap berfungsi untuk halaman saat ini, tetapi pilihan mungkin tidak bertahan setelah refresh. Menghapus data situs menghapus preferensi; mode privat mengikuti masa penyimpanan browsernya.
+- Pemulihan filter tidak memperpanjang batas lima menit dan tidak memulihkan sesi yang telah berakhir. Hasil memakai snapshot sesi terbaru dari server.
+- Runtime hanya public/admin.js berubah. Tampilan, backend, website pengguna, dan Telegram tetap sama persis dengan v78.
+- Bukti QA/filter-preference-results.json dan QA/filter-results.json berasal dari pengujian browser lokal dengan sesi uji. Screenshot sebelum/sesudah refresh ada di QA. Hosting publik belum diperbarui.
+- Rollback ke v78: pulihkan public/admin.js dan PETUNJUK.txt dari ROLLBACK/v78. Kunci preferensi yang tersisa akan diabaikan oleh v78; data operator tidak perlu dihapus. Riwayat bukti dan rollback sebelumnya ada di HISTORY/pre-v79.tar.xz.
+
+TIGA PENYEMPURNAAN ADMIN — v80
+- Indikator Filter tersimpan muncul selama 2,5 detik hanya setelah localStorage menerima penulisan pilihan filter. Perubahan berulang memperbarui satu indikator, tanpa menumpuk pesan. Pemulihan pilihan saat membuka halaman tidak memunculkan pesan simpan baru.
+- Jika penulisan gagal, tampil pesan: Filter gagal disimpan. Setelah refresh, pilihan ini mungkin berubah. Pesan tetap terlihat sampai percobaan berikutnya berhasil; filter saat ini tetap bisa digunakan. Pesan memiliki role status dan aria-live polite.
+- Reset filter mengosongkan pencarian, memilih Semua status, dan mencoba menyimpan pilihan itu melalui mekanisme yang sama. Tombol mendukung keyboard dan tinggi sentuh minimal 44 px. Reset tidak menghapus sesi, nama, waktu perubahan, data bantuan, atau pilihan detail sesi.
+- Di bawah nama/ID sesi, tampil waktu relatif seperti Nama diperbarui 30 detik lalu. Keterangan memakai nameUpdatedAt server yang sudah tersedia; tidak membuat atau memperpanjang timestamp. Pada perubahan baru tampil Nama baru saja diperbarui; kemudian detik, menit, jam, atau hari. Waktu tepat dalam WIB tersedia pada title keterangan.
+- Sesi yang belum pernah mengubah nama tidak mendapat keterangan perubahan. Mengosongkan nama tetap dianggap perubahan sesuai aturan server v78. Nama sama tetap dibedakan menurut ID sesi.
+- Keterangan waktu memakai jam server terakhir ditambah waktu monoton browser, bukan Date.now browser. Pembaruan label dilakukan tanpa merender ulang seluruh tabel dari timer baru; timer label berhenti saat tab tersembunyi/ditinggalkan dan dihitung ulang saat kembali.
+- Hanya public/admin.html, public/admin.css, public/admin.js, dan petunjuk ini berubah. Backend, website pengguna, data operator, dan Telegram tidak berubah. Tidak ada migrasi data.
+- Bukti QA/admin-features-results.json, filter-preference-results.json, dan filter-results.json memakai browser dan server lokal dengan sesi uji. Percepatan jam server digunakan untuk menguji rentang waktu. Screenshot aktual kondisi berhasil, gagal simpan, dan mobile ada di QA. Belum dipasang ke hosting publik; ukuran mobile diuji dalam browser, bukan HP fisik.
+- Rollback: pulihkan public/admin.html, public/admin.css, public/admin.js, dan PETUNJUK.txt dari ROLLBACK/v79. Tidak perlu menghapus data operator. Riwayat bukti dan rollback sebelumnya dipertahankan di HISTORY/pre-v80.tar.xz.
+
+LIMA KONTROL ADMIN — v81
+- Badge Nama diperbarui · 5 menit menghitung seluruh sesi pada snapshot admin yang namanya berubah dalam lima menit terakhir, terlepas dari filter/pencarian. Sesi tanpa perubahan dan perubahan yang sudah lewat tidak dihitung. Dua nama sama tetap dihitung per ID sesi. Hitungan mengikuti timestamp server yang sudah ada; pembaruan nama yang sama tidak memperpanjang waktunya.
+- Badge berkurang ketika rentang berakhir, termasuk saat Semua status dipilih. Saat koneksi putus, hitungan hanya memakai data terakhir yang diketahui, bukan klaim perubahan baru dari server. Timer batas waktu dihentikan saat tab tersembunyi dan dihitung ulang saat tab terlihat.
+- Filter Butuh bantuan mengurutkan permintaan pending menurut createdAt paling awal. Waktu sama memakai ID sesi sebagai pembeda urutan yang stabil. Permintaan berulang tidak mengganti waktu awal sesuai perilaku backend yang sudah ada. Permintaan selesai keluar dari filter pending. Urutan filter lain dipertahankan.
+- Saat sambungan SSE admin terputus, keterangan di atas tabel berbunyi Menampilkan data terakhir beserta Diperbarui dan waktu snapshot terakhir dalam WIB. Tanggal tersebut tidak diganti dengan jam saat ini. Baris terakhir tetap tersedia. Peringatan hilang setelah snapshot baru diterima; tersambung saja belum dianggap data sudah terbaru.
+- Bila belum pernah menerima snapshot, pesan menyatakan Data sesi belum berhasil dimuat tanpa membuat waktu pembaruan. Penanda koneksi dan pembatasan arahan ketika koneksi putus tetap berlaku.
+- Salin ID pada setiap baris menyalin UUID sesi lengkap, bukan delapan karakter yang ditampilkan. Tombol memakai API clipboard browser saat diklik; tidak membaca isi clipboard. Status Menyalin, Tersalin, dan Salin gagal terkait ID tersebut, tetap konsisten selama render tabel. Ketukan ganda saat proses yang sama diabaikan. Penyalinan yang ditolak/tidak tersedia tidak ditampilkan sebagai berhasil; coba lagi atau salin ID lengkap dari panel Detail.
+- Clipboard browser memerlukan dukungan dan izin sesuai browser, biasanya HTTPS atau localhost. Uji sukses dilakukan pada clipboard browser lokal; uji gagal/tidak tersedia memakai penolakan API terkontrol. Dukungan perangkat fisik belum diverifikasi.
+- Bila filter/pencarian tidak cocok dengan sesi yang tersedia, pesan menyatakan tidak ada hasil dan menyediakan Tampilkan semua sesi. Tombol ini memakai fungsi Reset filter: memilih Semua status, mengosongkan pencarian, dan menyimpan pilihan. Tidak menghapus data sesi atau pilihan detail. Bila server memang belum punya sesi, tampil Belum ada sesi tanpa tombol pemulihan yang menyesatkan.
+- Hanya public/admin.html, public/admin.css, public/admin.js, dan dokumentasi yang berubah. Backend, website pengguna, support-client, dan Telegram tetap sama persis dengan v80.
+- Bukti QA/admin-controls-results.json dan regresi lainnya berasal dari server/browser lokal. Durasi lima menit dipercepat dengan offset jam server dan uji waktu bantuan sama memakai fixture khusus. Screenshot aktual tersedia untuk desktop, mobile, koneksi putus, serta filter kosong. Belum dipasang ke hosting publik.
+- Rollback ke v80: pulihkan public/admin.html, public/admin.css, public/admin.js, dan PETUNJUK.txt dari ROLLBACK/v80. Tidak perlu menghapus data operator. Riwayat QA/rollback sebelumnya tersimpan utuh di HISTORY/pre-v81.tar.xz.

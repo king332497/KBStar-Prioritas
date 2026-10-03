@@ -1,0 +1,30 @@
+PENTING UNTUK PENGGANTIAN PROYEK LAMA
+Ekstrak ke folder terpisah; jangan menimpa proyek lama secara manual.
+Baca PEMBARU/PETUNJUK-PEMERIKSA.txt. Jalankan --apply pada folder lama;
+pemeriksaan versi dan backup otomatis dilakukan sebelum penggantian.
+PEMBARU adalah alat lokal, jangan upload folder ini ke hosting.
+
+PAKET UPLOAD RINGAN — WEBSITE + ADMIN v81
+
+ISI
+Website lengkap dan backend/admin panel memakai kode yang sama persis dengan paket lengkap v81. Ini pemisahan arsip, bukan perubahan versi fitur.
+index.html berada langsung di folder utama. Struktur public/ tetap utuh. Dua file uji bawaan yang kecil tetap ada agar npm test berfungsi.
+
+CARA MEMAKAI
+1. Ekstrak kbbankcredit-v81-upload-ringan.zip.
+2. Untuk GitHub, unggah isi hasil ekstrak sebagai file proyek; jangan hanya mengunggah ZIP. Pertahankan nama dan struktur folder. index.html dan package.json berada di root proyek.
+3. Untuk mencoba website bersama admin secara lokal, gunakan Node.js 22 atau lebih baru, lalu klik MULAI-ADMIN.cmd di Windows atau jalankan npm start dari folder ini.
+4. Saat pertama dijalankan, server meminta Anda membuat akun admin sendiri. Tidak ada sandi bawaan.
+5. Website: http://127.0.0.1:8787 — Admin: http://127.0.0.1:8787/admin.
+6. Petunjuk konfigurasi server dan HTTPS ada dalam PETUNJUK.txt. Hosting statis saja tidak menjalankan backend admin. Paket belum dipasang ke hosting; konfigurasi hosting tidak diubah.
+
+ARSIP PENDAMPING
+Simpan kbbankcredit-v81-arsip-pengujian-rollback.zip sebagai cadangan lokal. Isinya screenshot, hasil pengujian, riwayat perubahan, rollback v80, serta bukti versi lama. Arsip ini tidak perlu diunggah bersama aplikasi.
+PETUNJUK.txt asli tetap disertakan tanpa perubahan. Rujukan QA/HISTORY/ROLLBACK di dalamnya tersedia pada arsip pendamping. Label versi pada bagian lama petunjuk merupakan riwayat; kode paket ini adalah v81.
+Untuk audit lengkap, ekstrak kedua ZIP ke satu folder kerja lokal. File uji yang ada di kedua ZIP identik. MANIFEST-PAKET-V81.json mencatat asal, lokasi, ukuran, dan SHA-256 seluruh file sumber.
+
+VERIFIKASI
+Tidak ada perubahan kode website, backend, admin, atau integrasi. Seluruh file aplikasi dibandingkan byte demi byte dengan sumber v81. Ukuran berkurang karena bukti dan riwayat dipisahkan, bukan karena fitur dihapus.
+Jalankan npm test untuk dua pengujian backend bawaan. Bukti pengujian browser v81 tersimpan pada arsip pendamping; tidak diklaim sebagai pengujian hosting publik atau HP fisik.
+Jangan masukkan data operator, sandi, .env, atau kunci HTTPS ke repository publik. Paket tidak memuat kredensial operator.
+Prototipe independen, bukan layanan resmi KB Bank.

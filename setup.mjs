@@ -1,0 +1,5 @@
+import readline from 'node:readline';
+import {Writable} from 'node:stream';
+import {writeFileSync} from 'node:fs';
+import {makeAdmin} from './server.mjs';
+export async function setup(file){let muted=false;const output=new Writable({write(chunk,enc,done){if(!muted)process.stdout.write(chunk);done();}});const rl=readline.createInterface({input:process.stdin,output,terminal:!!process.stdin.isTTY});const ask=q=>new Promise(r=>rl.question(q,r));try{console.log('Buat akun admin lokal. Tidak ada akun atau sandi bawaan.');const username=await ask('Nama admin: ');process.stdout.write('Kata sandi (minimal 12 karakter, tidak ditampilkan): ');muted=true;const password=await ask('');muted=false;process.stdout.write('\nUlangi kata sandi: ');muted=true;const confirmation=await ask('');muted=false;console.log('');if(password!==confirmation)throw Error('Kata sandi tidak sama. Jalankan lagi.');writeFileSync(file,JSON.stringify(makeAdmin(username,password),null,2),{mode:0o600,flag:'wx'});console.log('Akun admin dibuat.')}finally{muted=false;rl.close();}}

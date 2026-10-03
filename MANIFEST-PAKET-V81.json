@@ -1,0 +1,505 @@
+{
+  "source": "kbbankcredit-admin-lima-fitur-v81.zip",
+  "source_sha256": "111f40af578be7e1bee66eabff020e8dbc09459b255d15ea3a007ad077e37825",
+  "runtimeChanged": false,
+  "files": [
+    {
+      "path": "DIFF-LANGKAH-V19.json",
+      "bytes": 190,
+      "sha256": "f359927f17d36195bee0a9864779c8aed4313a5b959a4f055d202354e939cad0",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "DIFF-NOTIFIKASI-V17.json",
+      "bytes": 241,
+      "sha256": "05e1cc032d296e10ad8afa53cbebce6a53123740d308308bba0beae164f50d24",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "DIFF-TRANSFER-V16.json",
+      "bytes": 147,
+      "sha256": "f5d06ee70b37c551329b8148e506dfb4db74ba04c4a6693ae66a1dc79d35e3cb",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "DIFF-WAKTU-V20.json",
+      "bytes": 204,
+      "sha256": "2ee1cb4d0b6d4bd5472771050f2793fc7e2baa06c4a50889a72ee75fef2e0091",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "INFO-DASHBOARD-V8.txt",
+      "bytes": 282,
+      "sha256": "ad2216d6577d2a2bf500b3dbe11d2dceb777481f5c4a24458064b397a5fa7b05",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1668,
+      "sha256": "4d209a399cc9078e3aee058e960d5e6b202aff908801e3cb55bb78620b3607de",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "VERIFICATION-DASHBOARD-V8.json",
+      "bytes": 716,
+      "sha256": "9a89d9675b0e6eb05773b9dac4ae6abfce4226beba8e325b6f2ce05d49e0dbd9",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "VERIFICATION-DASHBOARD-V9.json",
+      "bytes": 429,
+      "sha256": "1461cbc8770acd63bd4fafc13c48cdda16898fbd0c86020891e1d014d130cb67",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "VERIFICATION-LANGKAH-V19.json",
+      "bytes": 1139,
+      "sha256": "4981b9dd4e8d6f6826b7c854e9c008defaabdb485d3a0ae829c174313d4588e4",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "VERIFICATION-NOTIFIKASI-V17.json",
+      "bytes": 551,
+      "sha256": "19b78291c67352d298f7e7de58de89e019da6c06306893cfc81fefca546caa74",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "VERIFICATION-TRANSFER-V16.json",
+      "bytes": 631,
+      "sha256": "f94c815534c7b77216a49858c4fdb16fcdf2329fd520d6e8b9b47eacc2cf82ec",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "VERIFICATION-WAKTU-V20.json",
+      "bytes": 744,
+      "sha256": "1bcfbc0c23c0492eb5da030f6331f6db8ad94010d5ac473a409e4d6b8d8bd30a",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "dashboard-langsung.html",
+      "bytes": 427920,
+      "sha256": "d870bc26370cdfe9492ad3960edd25389e14e10ce4da166f7a38503b7b914bfb",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "setup.mjs",
+      "bytes": 1052,
+      "sha256": "adf8110bf8b578b7bba61fc0970f22f5b258995df756f2d94ea19d0d6f797f03",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "MULAI-ADMIN.cmd",
+      "bytes": 191,
+      "sha256": "e308ff95773049d718656a405a2b2e9d5a6020a65c15e11e09267c76582aa317",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "data/.keep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 44,
+      "sha256": "7ab0dd54b9d24cc0b24c05ac23557985613404421809381fad74b802e6daf068",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "access-store.mjs",
+      "bytes": 6157,
+      "sha256": "d787e6d21d8de592132a54cc446bfee17beeb15d0fdbbf08a0994cd71fa80030",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "index.html",
+      "bytes": 3374763,
+      "sha256": "3c0ffc6deafeabb1ddcff35a8939fa3c90a53dca67f1ffeb5de737b1564b33e0",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "public/support-client.js",
+      "bytes": 9031,
+      "sha256": "d7740bcbee07a068683298732405a6142b6bcede1041865d3fbad703f6914575",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "package.json",
+      "bytes": 243,
+      "sha256": "5c80a5ac5cef81467852088571014b2cda86aa6e15834af0b6f4ae3a262ca47c",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "server.mjs",
+      "bytes": 14773,
+      "sha256": "8b570091ccf095157e0e8623dbe1dc6f6d355cf0061f53eeab9d8d24fccbced9",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "HISTORY/pre-v81.tar.xz",
+      "bytes": 38503624,
+      "sha256": "d03c06d4e6560226f82a149b6f0a634620254647c967023a2dc676d441ef7c1e",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "public/admin.js",
+      "bytes": 17565,
+      "sha256": "d073297731e8e1a899d82553ba8f91289482b2cecf4878e0fac6ad5774b43c43",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "public/admin.html",
+      "bytes": 7013,
+      "sha256": "55c5a070f6417d9b781c75e54fa4b117d96772269492267d0f3aff53cd55a83a",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "public/admin.css",
+      "bytes": 13130,
+      "sha256": "8b6b004fc0876920634b900fe1f4f27682c3f57c49c4771f5d8104fe725a0533",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "PETUNJUK.txt",
+      "bytes": 21332,
+      "sha256": "cf5243f8948fcad5b1315f19c01ad2da63065e8b069de34fedf7899085ce76f0",
+      "packages": [
+        "upload"
+      ]
+    },
+    {
+      "path": "QA/admin-lima-fitur-mobile.png",
+      "bytes": 82380,
+      "sha256": "42f739fe0a893d415ec8bed02d182d6885714491a7e055800189a5cebf0298a0",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/name-filter.cjs",
+      "bytes": 5297,
+      "sha256": "af063028a996de4168fa64d05e2bf901c8c08e9a2ede3dd47003c229d69d1246",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-nama-mobile.png",
+      "bytes": 77022,
+      "sha256": "cc83b66cd00a1095ed43df608f28659b84557276cd1ae9c9264ced8007730c4e",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-gagal-simpan.png",
+      "bytes": 81621,
+      "sha256": "8637b5b3b9b43ce5b18fbfd45fac3a9b9c256b0ec2f055e4ab88ec0ee44e1fc6",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-tiga-fitur-mobile.png",
+      "bytes": 77094,
+      "sha256": "7e989588dae0904edf9e04990be11892f082bf98347904fe6bed5bff9df8e141",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-nama-admin.png",
+      "bytes": 179059,
+      "sha256": "d43e9ec4ae7dafa2a5a568c046fdc074409fd5a08271dda8c5b27068ffd22f33",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-preference-results.json",
+      "bytes": 669,
+      "sha256": "92958865a185fa369c01be90e029d0eb8283392f66de0f936e1e65dcba7b8073",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-preference.cjs",
+      "bytes": 7259,
+      "sha256": "ee6c56d42aa3ca9d7caee5a226703be1dc2cdb9d24dcad756dace32f6a3d6120",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/help.test.mjs",
+      "bytes": 4035,
+      "sha256": "81028eab4466ea2ec68704b5d7638ff076c3b7a20455c898560b823a36c56c0b",
+      "packages": [
+        "upload",
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/patch-record.json",
+      "bytes": 347,
+      "sha256": "c9e5c98eec687fdee7306fee9a3cde093f7f3cb41f0df9ce0bac683b74409ba7",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/diff-public-admin.js.txt",
+      "bytes": 16638,
+      "sha256": "d5e58de4c3bc66d9fc804bf9d1897c6b23eeee632bc1408367857a91d8805c02",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-controls.cjs",
+      "bytes": 11112,
+      "sha256": "78f06faa52135070c11a4fd34999be558ab6cb7bc5482d6077a1c376abdbb7b7",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-tiga-fitur.png",
+      "bytes": 170678,
+      "sha256": "61b5fdb708bf2ef970024fbf9fb920738cb4b2534ebb0f90c4aa25de870cc463",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-results.json",
+      "bytes": 577,
+      "sha256": "1962fe27aad34d393f036b30e7aa7e79763f231be6de24c95abba932c921821e",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-controls-results.json",
+      "bytes": 1148,
+      "sha256": "211129e6f6fcaa20b3b4b819e2aaa4668c7453f71081d72e4dd468cdc5df561f",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-features-results.json",
+      "bytes": 857,
+      "sha256": "23dc517036ae566d234969ab2900bb8906e5aaab1b9bf75131e43cca91e4138e",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-features.cjs",
+      "bytes": 9360,
+      "sha256": "71db82dd8481af7851058cae8587a7ce8614ece55a1ea5654a3e907107098371",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-tanpa-hasil.png",
+      "bytes": 179547,
+      "sha256": "e98e4efddc48cf28a07c288302d89a885f86707f266051efca8c8f947a8065fb",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/server.test.mjs",
+      "bytes": 5220,
+      "sha256": "b9f3ff68c4089c353ac3e4a3351b893e80dec7ae074a0acdd53f5abe890598e3",
+      "packages": [
+        "upload",
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-lima-fitur.png",
+      "bytes": 191926,
+      "sha256": "88006bcb562b1f40f9630c5d12ec78f2d8211e20c2ad3887150cb02d08716650",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/diff-PETUNJUK.txt.txt",
+      "bytes": 4201,
+      "sha256": "a9cf2d3acd20b067084fc5d31cee129d095db8a8122bdc6282e9ccc5396ed1e6",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/data-terakhir-koneksi-putus.png",
+      "bytes": 221891,
+      "sha256": "b6734ef055fc7c6ed4e1e77640a54a3445fdd993eb3b1b6607e3677ab8342a83",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-tersimpan-mobile.png",
+      "bytes": 70434,
+      "sha256": "48c75858ce583c4f84cab8ee92564cb97dfd7450d6230a845bbad1540ab217fc",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-sebelum-refresh.png",
+      "bytes": 167518,
+      "sha256": "a6e5dd302fbb8ed831b506d42d1501512bc0485dd56c0cfa5ad745cd8a128581",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/diff-public-admin.html.txt",
+      "bytes": 7334,
+      "sha256": "931aa66f01d2cf58380e3e64915f0afddb9838956d492bc5741789834cec892f",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/diff-public-admin.css.txt",
+      "bytes": 1367,
+      "sha256": "9b901a17db89a6955cbab48f41c35c319de70ca52d6ff21cb61c34697df446c7",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/diff-check.json",
+      "bytes": 954,
+      "sha256": "bc86cf0c876c7b932478af63594fdfbd0e376a931dc453d44d02b9d867947c37",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/filter-setelah-refresh.png",
+      "bytes": 167347,
+      "sha256": "b61c5c12a3036d52fa0441909400740d69922576edbb12e816236e2faf9efd64",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "ROLLBACK/v80/PETUNJUK.txt",
+      "bytes": 17983,
+      "sha256": "13223961cdd972f61be2898872c464f2880c9ba7acd027f4ef8b55c8a78b2193",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "ROLLBACK/v80/public/admin.html",
+      "bytes": 6476,
+      "sha256": "6e9097c162f69bf69ef947ac4d40e9a696d48961f7f5bb4f258df7bb17525dc9",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "ROLLBACK/v80/public/admin.js",
+      "bytes": 13940,
+      "sha256": "ab7e3e1c671214f97f7553f25f80f7f63bb4d415e5a007d318b09694d40af3c0",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "ROLLBACK/v80/public/admin.css",
+      "bytes": 12128,
+      "sha256": "fd03fa286e9622db7176f7f8cbce9b04ed5353cf3837da5a611438efd78f2870",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/patch-v81.py",
+      "bytes": 4173,
+      "sha256": "b62f9a3ebe4628c017b41a3d9abc07a545c82b6654f065e301e086c85e570e13",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/session-controls.js",
+      "bytes": 3104,
+      "sha256": "7846eb228b809f4610611c2af0a419d2a9db2f418bb0fc7098633ab14b9db62f",
+      "packages": [
+        "archive"
+      ]
+    },
+    {
+      "path": "QA/admin-controls.css",
+      "bytes": 1001,
+      "sha256": "6af4eb4aa46ac77f80a1cc9d157126c0d7a099f5e0aadbe4b6fe580b792d2618",
+      "packages": [
+        "archive"
+      ]
+    }
+  ]
+}
